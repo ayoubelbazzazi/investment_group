@@ -14,7 +14,6 @@ const scrollDown = document.querySelector(".scroll-down");
 const scrollTo = document.querySelector("#scrollTo");
 const navigationLinks = document.querySelectorAll("nav a");
 const transitionContainerOut = document.querySelector("#page-transition-out");
-const pagesLinks = document.querySelectorAll("nav a");
 
 let showVideo;
 
