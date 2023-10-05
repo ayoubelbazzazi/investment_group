@@ -1,0 +1,25 @@
+{
+  "name": "design-one",
+  "version": "1.0.0",
+  "description": "This is my second design for my personal portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-css": "npx tailwindcss -i ./src/input.css -o ./public/output.css --watch"
+  },
+  "keywords": [
+    "investment group",
+    "portfolio web design",
+    "video player",
+    "smooth page transition"
+  ],
+  "author": "Ayoub El Bazzazi",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "gsap": "^3.11.5",
+    "scrolltrigger": "^1.0.1"
+  }
+}

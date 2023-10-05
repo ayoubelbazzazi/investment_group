@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-barba="wrapper">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css" />
+    <script
+      src="https://kit.fontawesome.com/c6c209c8da.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+      defer
+    ></script>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"
+      defer
+    ></script> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core" defer></script>
+    <script src="./script.js" type="module" defer></script>
+  </head>
+  <body class="min-h-[100vh] overflow-x-hidden w-[100vw] lg:pb-20">
+    <div data-barba="container">
+      <div
+        id="loading-container"
+        class="fixed clip left-0 top-0 bg-background w-[100vw] h-[100vh] z-[400] loading-container"
+      >
+        <div class="relative w-full h-full flex items-center justify-center">
+          <div
+            class="absolute bottom-20 right-10 text-[7vw] md:text-[4vw] md:right-[10%] md:bottom-[5%]"
+            id="loading-status"
+          >
+            <div id="progress">0%</div>
+          </div>
+          <div class="w-[60vw] md:w-[40vw] flex items-center justify-center">
+            <div
+              class="w-fit flex items-center justify-center gap-5"
+              id="logo-container"
+            >
+              <img
+                src="../assets/acronym.svg"
+                id="acronym"
+                class="opacity-0 h-[5vh] sm:h-[7vh] lg:h-[15vh]"
+              />
+              <img
+                src="../assets/logo-text.svg"
+                id="logo-text"
+                class="clip-hide opacity-0"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="fixed top-0 left-0 w-[45px] h-[45px] border-solid border-yellow-400 border-[1.5px] z-50 rounded-full transform -translate-x-1/2 -translate-y-1/2 click-through"
+        id="pointer"
+      ></div>
+      <header class="fixed top-0 left-0 w-full z-20 bg-background invert-color">
+        <div
+          class="flex gap-6 items-center border-solid border-white border-b-[1px] lg:justify-between m-6 lg:mx-14 xl:mx-20 pb-5 mb-0 h-[100px] invert-color"
+        >
+          <div
+            class="lg:hidden flex flex-col justify-between items-center md:gap-2 navigation-icon open-icon gap-1"
+          >
+            <div
+              class="w-[30px] h-[2px] md:2-[50px] md:h-[4px] bg-primary bar invert-color-2"
+            ></div>
+            <div
+              class="w-[30px] h-[2px] md:2-[50px] md:h-[4px] bg-primary bar invert-color-2"
+            ></div>
+          </div>
+          <a
+            id="header-logo"
+            href="/index.html"
+            class="expand-cursor w-[50%] md:w-[30%] lg:w-[20%]"
+          >
+            <img
+              src="../images/logo.png"
+              alt="logo"
+              class="w-full logo expand-cursor"
+            />
+          </a>
+          <nav>
+            <ul
+              class="capitalize hidden lg:flex gap-5 items-center xl:text-xl 2xl:text-2xl font-semibold xl:gap-10"
+            >
+              <li class="nav-list relative block expand-cursor">
+                <a class="expand-cursor" href="/about/index.html">About Us</a>
+              </li>
+              <li
+                class="nav-list relative block font-normal line-through opacity-50"
+              >
+                Services
+              </li>
+              <li
+                class="nav-list relative block font-normal line-through opacity-50"
+              >
+                Leadership
+              </li>
+              <li
+                class="nav-list relative block font-normal line-through opacity-50"
+              >
+                News&Events
+              </li>
+              <li
+                class="nav-list relative block font-normal line-through opacity-50"
+              >
+                careers
+              </li>
+              <li
+                class="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 transition text-black cursor-pointer expand-cursor"
+              >
+                Contact
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <nav
+        class="lg:hidden fixed top-0 pt-16 pb-48 navigation-phone w-full overflow-y-scroll px-6 hidden transform -translate-y-[150vh] bg-background z-50 invert-color"
+      >
+        <ul class="text-[9vw] sm:text-[5vw] flex flex-col gap-2 mb-24">
+          <li><a href="/about/index.html">About Us</a></li>
+          <li class="line-through expand-cursor font-normal opacity-50">
+            Services
+          </li>
+          <li class="line-through expand-cursor font-normal opacity-50">
+            Leadership
+          </li>
+          <li class="line-through expand-cursor font-normal opacity-50">
+            News&Events
+          </li>
+          <li class="line-through expand-cursor font-normal opacity-50">
+            careers
+          </li>
+          <li>Contact</li>
+        </ul>
+        <div class="mb-10 text-[3vw]">
+          <p>ingo@investmentgroup.com</p>
+          <p>+212611223344</p>
+        </div>
+        <div class="mb-10 text-[3vw]">
+          <p>Street1, boulevard2, block3</p>
+          <p>Sale, 11000</p>
+        </div>
+        <div class="grid grid-cols-2 grid-rows-2 opacity-50 text-[3vw]">
+          <span>Facebook</span>
+          <span>Twitter</span>
+          <span>Linkedin</span>
+          <span>Indeed</span>
+        </div>
+      </nav>
+      <main class="pt-40 md:pt-32 lg:pt-28">
+        <div
+          id="separator"
+          class="hidden md:block md:absolute left-1/2 top-0 h-[100vh] w-[1px] transform -translate-x-1/2 bg-primary"
+        ></div>
+        <div class="m-6 lg:mx-14 xl:mx-20 mb-0 md:grid grid-cols-2">
+          <div class="mb-20 md:pr-10 md:mb-0">
+            <h2
+              class="text-[10vw] font-bold mb-8 md:text-[6vw] md:mb-6 heading opacity-0"
+            >
+              Contact
+            </h2>
+            <h3 class="text-[6vw] mb-10 md:text-[2.5vw] heading opacity-0">
+              Want to send us a message?
+            </h3>
+            <form action="POST">
+              <div
+                class="relative border-b-[1px] border-solid border-primary border-opacity-50 pb-3 mb-10 md:pb-3"
+              >
+                <label
+                  for="name"
+                  class="absolute left-0 top-0 text-[4.3vw] font-semibold md:text-[1.5vw] transform origin-top-left lg:text-[1vw]"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  class="bg-transparent text-primary w-full outline-none text-[3.5vw] md:text-[1.5vw] lg:text-[1vw]"
+                />
+              </div>
+              <div
+                class="relative border-b-[1px] border-solid border-primary border-opacity-50 pb-3 mb-10 md:pb-3"
+              >
+                <label
+                  for="name"
+                  class="absolute left-0 top-0 text-[4.3vw] font-semibold md:text-[1.5vw] transform origin-top-left lg:text-[1vw]"
+                  >Your Email</label
+                >
+                <input
+                  type="text"
+                  class="bg-transparent text-primary w-full outline-none text-[3.5vw] md:text-[1.5vw] lg:text-[1vw]"
+                />
+              </div>
+              <div
+                class="relative border-b-[1px] border-solid border-primary border-opacity-50 pb-3 mb-10 md:pb-3"
+              >
+                <label
+                  for="name"
+                  class="absolute left-0 top-0 text-[4.3vw] font-semibold md:text-[1.5vw] transform origin-top-left lg:text-[1vw]"
+                  >Your Message</label
+                >
+                <input
+                  type="text"
+                  class="bg-transparent text-primary w-full outline-none text-[3.5vw] md:text-[1.5vw] lg:text-[1vw]"
+                />
+              </div>
+              <button
+                id="submit-button"
+                class="px-12 py-4 bg-yellow-400 text-background text-[5vw] font-semibold md:text-[2vw] lg:text-[1.5vw] lg:px-8 lg:py-2 expand-cursor hover:bg-yellow-500 transition"
+              >
+                Send
+              </button>
+            </form>
+          </div>
+          <div class="mb-20 md:hidden">
+            <div class="w-full h-[1px] bg-primary"></div>
+          </div>
+          <div class="md:grid grid-cols-2 gap-2 md:pt-32 md:px-10 lg:gap-5">
+            <div class="mb-16 md:mb-0">
+              <div class="text-[5vw] mb-5 font-bold md:text-[1.5vw]">Phone</div>
+              <div class="text-[5vw] font-semibold md:text-[1.5vw]">
+                +212 511 22 33 44
+              </div>
+            </div>
+            <div class="mb-16 md:mb-0">
+              <div class="text-[5vw] mb-5 font-bold md:text-[1.5vw]">Email</div>
+              <div class="text-[5vw] font-semibold md:text-[1.5vw]">
+                info@investmentgroup.com
+              </div>
+            </div>
+            <div class="mb-16 md:mb-0">
+              <div class="text-[5vw] mb-5 font-bold md:text-[1.5vw]">
+                Address
+              </div>
+              <div class="text-[5vw] font-semibold md:text-[1.5vw]">
+                Investment Group QG. SALE 11000
+              </div>
+            </div>
+            <div class="mb-16 md:mb-0">
+              <div class="text-[5vw] mb-5 font-bold md:text-[1.5vw]">
+                Social
+              </div>
+              <div class="text-[5vw] font-semibold md:text-[1.5vw]">
+                Facebook
+              </div>
+              <div class="text-[5vw] font-semibold md:text-[1.5vw]">
+                Twitter
+              </div>
+              <div class="text-[5vw] font-semibold md:text-[1.5vw]">
+                Linkedin
+              </div>
+              <div class="text-[5vw] font-semibold md:text-[1.5vw]">Indeed</div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <div class="m-6 mb-20 md:hidden">
+        <div class="w-full h-[1px] bg-primary"></div>
+      </div>
+      <footer class="flex flex-col text-[5vw] m-6 md:hidden justify-between">
+        <div class="flex flex-col mb-10">
+          <span>info@investmentgroup.com</span>
+          <span>+212 511 22 33 44</span>
+        </div>
+        <div class="flex flex-col mb-10">
+          <span>Investment Group QG</span>
+          <span>SALE, 11000</span>
+        </div>
+        <div class="grid grid-cols-2 grid-rows-2 mb-10 opacity-50">
+          <span>Instagram</span>
+          <span>Twitter</span>
+          <span>Linkedin</span>
+          <span>Indeed</span>
+        </div>
+        <div class="flex flex-col mb-10 opacity-50">
+          <span>Legal</span>
+          <span>InvestGroup@2023</span>
+        </div>
+      </footer>
+      <div
+        id="page-transition"
+        class="w-[100vw] h-[100vh] bg-primary fixed top-0 left-0 z-[500]"
+      ></div>
+      <div
+        id="page-transition-out"
+        class="w-[100vw] h-[100vh] bg-primary fixed top-0 left-0 z-[500] clip"
+      ></div>
+    </div>
+  </body>
+</html>

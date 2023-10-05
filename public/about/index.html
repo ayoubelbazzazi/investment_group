@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en" data-barba="wrapper">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c6c209c8da.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../output.css" />
+    <title>About page</title>
+    <script
+      src="https://kit.fontawesome.com/c6c209c8da.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+      defer
+    ></script>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"
+      defer
+    ></script> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core" defer></script>
+    <!-- <script src="./contact/script.js" type="module" defer></script> -->
+    <script src="./script.js" type="module" defer></script>
+  </head>
+  <body class="min-h-[100vh] overflow-x-hidden max-w-[100vw]">
+    <div data-barba="container">
+      <div
+        id="loading-container"
+        class="fixed clip left-0 top-0 bg-background w-[100vw] h-[100vh] z-[400] loading-container"
+      >
+        <div class="relative w-full h-full flex items-center justify-center">
+          <div
+            class="absolute bottom-20 right-10 text-[7vw] md:text-[4vw] md:right-[10%] md:bottom-[5%]"
+            id="loading-status"
+          >
+            <div id="progress">0%</div>
+          </div>
+          <div class="w-[60vw] md:w-[40vw] flex items-center justify-center">
+            <div
+              class="w-fit flex items-center justify-center gap-5"
+              id="logo-container"
+            >
+              <img
+                src="../assets/acronym.svg"
+                id="acronym"
+                class="opacity-0 h-[5vh] sm:h-[7vh] lg:h-[15vh]"
+              />
+              <img
+                src="../assets/logo-text.svg"
+                id="logo-text"
+                class="clip-hide opacity-0"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="fixed top-0 left-0 w-[45px] h-[45px] border-solid border-yellow-400 border-[1.5px] rounded-full transform -translate-x-1/2 -translate-y-1/2 click-through z-[450]"
+        id="pointer"
+      ></div>
+      <header
+        class="fixed top-0 left-0 w-full z-[300] bg-background invert-color"
+      >
+        <div
+          class="flex gap-6 items-center border-solid border-white border-b-[1px] lg:justify-between m-6 lg:mx-14 xl:mx-20 pb-5 mb-0 h-[100px] invert-color"
+        >
+          <div
+            class="lg:hidden flex flex-col justify-between items-center md:gap-2 navigation-icon open-icon gap-1 expand-cursor cursor-pointer"
+          >
+            <div
+              class="w-[30px] h-[2px] md:2-[50px] md:h-[4px] bg-primary bar invert-color-2 expand-cursor"
+            ></div>
+            <div
+              class="w-[30px] h-[2px] md:2-[50px] md:h-[4px] bg-primary bar invert-color-2 expand-cursor"
+            ></div>
+          </div>
+          <a
+            id="header-logo"
+            href="../index.html"
+            class="w-[50%] md:w-[30%] lg:w-[20%] logo expand-cursor"
+          >
+            <img src="../images/logo.png" alt="logo" class="expand-cursor" />
+          </a>
+          <nav class="">
+            <ul
+              class="capitalize hidden lg:flex gap-5 items-center xl:text-xl 2xl:text-2xl font-semibold xl:gap-10"
+            >
+              <li class="nav-list relative block expand-cursor">About Us</li>
+              <li
+                class="nav-list relative block font-normal opacity-50 line-through"
+              >
+                Services
+              </li>
+              <li
+                class="nav-list relative block font-normal opacity-50 line-through"
+              >
+                Leadership
+              </li>
+              <li
+                class="nav-list relative block font-normal opacity-50 line-through"
+              >
+                News&Events
+              </li>
+              <li
+                class="nav-list relative block font-normal opacity-50 line-through"
+              >
+                careers
+              </li>
+              <a
+                href="/contact/index.html"
+                class="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 transition text-black cursor-pointer expand-cursor"
+              >
+                Contact
+              </a>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <nav
+        class="lg:hidden fixed top-0 pt-16 pb-48 navigation-phone w-full overflow-y-scroll px-6 hidden transform -translate-y-[150vh] bg-background z-50 invert-color"
+      >
+        <ul class="text-[9vw] sm:text-[5vw] flex flex-col gap-2 mb-24">
+          <li class="expand-cursor">About Us</li>
+          <li class="line-through expand-cursor font-normal opacity-50">
+            Services
+          </li>
+          <li class="line-through expand-cursor font-normal opacity-50">
+            Leadership
+          </li>
+          <li class="line-through expand-cursor font-normal opacity-50">
+            News&Events
+          </li>
+          <li class="line-through expand-cursor font-normal opacity-50">
+            careers
+          </li>
+          <li class="expand-cursor">
+            <a href="/contact/index.html" class="expand-cursor">Contact</a>
+          </li>
+        </ul>
+        <div class="mb-10 text-[3vw]">
+          <p>ingo@investmentgroup.com</p>
+          <p>+212611223344</p>
+        </div>
+        <div class="mb-10 text-[3vw]">
+          <p>Street1, boulevard2, block3</p>
+          <p>Sale, 11000</p>
+        </div>
+        <div class="grid grid-cols-2 grid-rows-2 opacity-50 text-[3vw]">
+          <span>Facebook</span>
+          <span>Twitter</span>
+          <span>Linkedin</span>
+          <span>Indeed</span>
+        </div>
+      </nav>
+      <main class="pt-40 md:pt-32 lg:pt-28 mb-32">
+        <div
+          id="coordinates"
+          class="hidden lg:grid grid-cols-3 grid-rows-2 mt-5 mx-14 xl:mx-20 text-[10px] opacity-50 w-fit xl:text-base mb-20"
+        >
+          <span>Sale, Morocco</span>
+          <span>+212 611 22 33 44</span>
+          <span>03:51</span>
+          <span>@info.investgroup.com</span>
+          <span>+1 202-754-8500</span>
+          <span>Info@Investmentgroupdc.com</span>
+        </div>
+        <div
+          class="m-6 lg:mx-14 xl:mx-20 mb-12 text-[7vw] font-semibold md:text-[3vw]"
+        >
+          <h1
+            id="heading"
+            class="uppercase text-[10vw] font-bold mb-20 md:text-[6vw]"
+          >
+            our story
+          </h1>
+          <p class="mb-10 leading-tight md:font-light">
+            Here is a rewritten version of your paragraph: Investment Group is a
+            management consulting firm with more than a decade of experience
+            helping public and private sector clients achieve their goals
+            through effective and innovative consulting services. Our projects
+            have saved clients over $3 billion.
+          </p>
+          <p class="leading-tight md:font-light">
+            We earn our clients' trust every day by solving complex program
+            management and systems engineering challenges, while carefully
+            managing risks. Our capabilities are rooted in experienced program
+            management, strong technical competencies, and results that matter
+            to our clients.
+          </p>
+        </div>
+        <div class="mt-20 mb-20 mx-6 xl:mx-20 relative">
+          <div
+            class="video-container paused allow-keyboard-events relative flex justify-center mx-auto bg-black w-full lg:w-[60vw]"
+            data-volume-level="high"
+          >
+            <div
+              class="play-pause-animation-container rounded-full hidden lg:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[200]"
+            >
+              <div
+                class="play-animation-icon w-[50px] h-[50px] rounded-full bg-transparent-background-2 p-5 box-content"
+              >
+                <svg class="transform" viewBox="0 0 24 24">
+                  <path fill="white" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+                </svg>
+              </div>
+              <div
+                class="pause-animation-icon w-[50px] h-[50px] rounded-full bg-transparent-background-2 p-5 box-content"
+              >
+                <svg class="pause-animation-icon transform" viewBox="0 0 24 24">
+                  <path fill="white" d="M14,19H18V5H14M6,19H10V5H6V19Z" />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="absolute w-1/4 h-full right-0 top-0 bg-gradient-to-r from-fast-forward-0 to-fast-forward-1 z-[40] flex items-center justify-center fast-forward pointer-events-none"
+            >
+              <div class="flex flex-col items-center gap-[3px]">
+                <div class="flex gap-[2px] self-end">
+                  <div class="h-[13px] w-[11px] bg-white triangle"></div>
+                  <div class="h-[13px] w-[11px] bg-white triangle"></div>
+                  <div class="h-[13px] w-[11px] bg-white triangle"></div>
+                </div>
+                <div class="text-xs lg:text-base">
+                  <span class="timer">5</span> seconds
+                </div>
+              </div>
+            </div>
+            <div
+              class="absolute w-1/4 h-full left-0 top-0 bg-gradient-to-r from-fast-forward-1 to-fast-forward-0 z-[40] flex items-center justify-center fast-backward pointer-events-none"
+            >
+              <div class="flex flex-col gap-[3px]">
+                <div class="flex gap-[2px] self-start">
+                  <div
+                    class="h-[13px] w-[11px] bg-white triangle backward"
+                  ></div>
+                  <div
+                    class="h-[13px] w-[11px] bg-white triangle backward"
+                  ></div>
+                  <div
+                    class="h-[13px] w-[11px] bg-white triangle backward"
+                  ></div>
+                </div>
+                <div class="text-xs lg:text-base">
+                  <span class="timer">5</span> seconds
+                </div>
+              </div>
+            </div>
+            <div
+              class="video-mobile-controls absolute h-full w-full bg-transparent-background-2 z-50 lg:hidden"
+            >
+              <button
+                class="play-pause-btn-mobile h-fit w-[50px] lg:hidden center-absolute"
+              >
+                <svg class="play-icon-mobile" viewBox="0 0 24 24">
+                  <path fill="white" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+                </svg>
+                <svg class="pause-icon-mobile" viewBox="0 0 24 24">
+                  <path fill="white" d="M14,19H18V5H14M6,19H10V5H6V19Z" />
+                </svg>
+              </button>
+              <div
+                class="video-controls-container-mobile bg-transparent md:bg-black absolute bottom-0 left-0 right-0 text-white z-[99] flex items-center justify-between px-[5px] py-[10px] gap-[.5rem] h-[30px] w-full md:px-5 lg:hidden"
+              >
+                <div class="pre-controls flex items-center gap-[.5rem] h-full">
+                  <div
+                    class="duration-container flex items-center text-[14px] lg:text-base"
+                  >
+                    <div class="current-time">0:00</div>
+                    /
+                    <div class="total-time">0:00</div>
+                  </div>
+                </div>
+                <div
+                  class="timeline-container-mobile bg-transparent h-[30px] flex-grow flex items-center relative mx-[.5em] sm:mx-[1em]"
+                >
+                  <div
+                    class="track-mobile absolute left-0 w-full top-1/2 transform -translate-y-1/2 bg-slate-400 h-[3px] 2xl:h-[5px]"
+                  ></div>
+                  <div class="timeline-mobile h-[3px] bg-white relative">
+                    <div
+                      class="thumb-indicator-mobile absolute top-1/2 right-0 w-[13px] h-[13px] bg-white transform -translate-y-1/2 translate-x-1/2 p-5 circle"
+                    ></div>
+                  </div>
+                </div>
+                <div class="w-[40px] sm:w-[50px]">
+                  <svg
+                    width="38"
+                    height="13"
+                    viewBox="0 0 38 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-full h-auto"
+                  >
+                    <path
+                      d="M2.14554 13C1.47106 13 0.941946 12.8252 0.55819 12.4757C0.186063 12.114 0 11.5777 0 10.8665C0 10.5772 0.0290724 10.2879 0.0872172 9.99861L1.34315 3.85118H3.855L2.59907 9.99861C2.54093 10.3 2.51186 10.5169 2.51186 10.6495C2.51186 11.0473 2.70955 11.2462 3.10493 11.2462C3.63987 11.2462 4.1341 10.8966 4.58763 10.1975C5.05278 9.49838 5.42491 8.66667 5.70401 7.70236C5.9831 6.73806 6.12265 5.90635 6.12265 5.20723C6.09939 5.2675 6.0238 5.31572 5.89588 5.35188C5.76797 5.37599 5.65749 5.38804 5.56446 5.38804C5.36677 5.38804 5.20978 5.29161 5.09349 5.09875C4.98883 4.90589 4.9365 4.69495 4.9365 4.46593C4.9365 4.17663 5.02371 3.94159 5.19815 3.76078C5.38421 3.57997 5.65749 3.48957 6.01799 3.48957C6.40174 3.48957 6.68084 3.64024 6.85527 3.94159C7.02971 4.23088 7.11693 4.60454 7.11693 5.06259C7.11693 6.14743 6.93668 7.31062 6.57618 8.55216C6.21568 9.78164 5.66331 10.8303 4.91905 11.6982C4.1748 12.5661 3.2503 13 2.14554 13Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.2927 2.87483C9.90897 2.87483 9.58336 2.73621 9.31589 2.45897C9.04842 2.18173 8.91469 1.84423 8.91469 1.44645C8.91469 1.04868 9.04842 0.711174 9.31589 0.433937C9.58336 0.144646 9.90897 0 10.2927 0C10.6765 0 11.0021 0.144646 11.2696 0.433937C11.5487 0.711174 11.6882 1.04868 11.6882 1.44645C11.6882 1.84423 11.5487 2.18173 11.2696 2.45897C11.0021 2.73621 10.6765 2.87483 10.2927 2.87483ZM9.10657 13C8.54838 13 8.09485 12.8192 7.74598 12.4576C7.40874 12.096 7.24012 11.5535 7.24012 10.8303C7.24012 10.529 7.28664 10.1372 7.37967 9.65508L8.56582 3.85118H11.0777L9.82175 9.99861C9.77523 10.1794 9.75198 10.3723 9.75198 10.5772C9.75198 10.8183 9.80431 10.993 9.90897 11.1015C10.0253 11.198 10.2113 11.2462 10.4672 11.2462C10.8044 11.2462 11.1184 11.1015 11.4091 10.8122C11.6998 10.5109 11.9091 10.1252 12.0371 9.65508H12.7697C12.3394 10.9569 11.787 11.8428 11.1126 12.3129C10.4381 12.771 9.76942 13 9.10657 13Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M14.0187 13C13.4605 13 12.9895 12.8915 12.6058 12.6745C12.222 12.4455 11.9371 12.1562 11.751 11.8067C11.565 11.4451 11.4719 11.0714 11.4719 10.6857C11.4719 10.2879 11.565 9.94437 11.751 9.65508C11.9255 9.35373 12.1406 9.13676 12.3964 9.00417C12.85 8.16041 13.2453 7.31062 13.5826 6.4548C13.9198 5.58693 14.2396 4.65276 14.542 3.6523L17.1236 3.29068C17.1817 4.83357 17.2806 6.50301 17.4201 8.29903C17.4783 9.02225 17.5074 9.54659 17.5074 9.87204C17.5074 10.1493 17.4841 10.3783 17.4376 10.5591C17.9841 10.2337 18.4028 9.93231 18.6935 9.65508H19.4261C18.6819 10.5471 17.7923 11.3004 16.7573 11.9152C16.4201 12.2888 16.0014 12.5661 15.5014 12.7469C15.0129 12.9156 14.5187 13 14.0187 13ZM13.4605 11.5716C13.8908 11.5716 14.2512 11.439 14.542 11.1739C14.8327 10.9087 14.9781 10.4808 14.9781 9.89013C14.9781 9.52851 14.9432 9.02225 14.8734 8.37135C14.7571 6.99722 14.6815 6.0751 14.6466 5.60501C14.3675 6.55726 13.8966 7.69634 13.2337 9.02225C13.5012 9.1669 13.6349 9.37784 13.6349 9.65508C13.6349 9.8841 13.5593 10.089 13.4081 10.2698C13.2686 10.4506 13.0884 10.541 12.8674 10.541C12.6232 10.541 12.4662 10.4627 12.3964 10.306C12.3964 10.7399 12.4778 11.0593 12.6406 11.2643C12.8151 11.4692 13.0884 11.5716 13.4605 11.5716Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M20.4176 13C19.8594 13 19.4058 12.8192 19.057 12.4576C18.7197 12.096 18.5511 11.5535 18.5511 10.8303C18.5511 10.529 18.5976 10.1372 18.6907 9.65508L19.7373 4.57441H19.1616L19.3012 3.85118H19.8768L20.4001 1.35605L22.9817 0.994437L22.3887 3.85118H23.4353L23.2957 4.57441H22.2491L21.1327 9.99861C21.0862 10.1794 21.063 10.3723 21.063 10.5772C21.063 10.8183 21.1153 10.993 21.22 11.1015C21.3362 11.198 21.5223 11.2462 21.7781 11.2462C22.1154 11.2462 22.4294 11.1015 22.7201 10.8122C23.0108 10.5109 23.2201 10.1252 23.3481 9.65508H24.0807C23.6504 10.9569 23.098 11.8428 22.4235 12.3129C21.7491 12.771 21.0804 13 20.4176 13Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M25.4343 13C24.7715 13 24.2191 12.765 23.7772 12.2949C23.3353 11.8248 23.1143 11.0895 23.1143 10.089C23.1143 9.19703 23.283 8.26287 23.6202 7.28651C23.9691 6.2981 24.4807 5.46639 25.1552 4.79138C25.8413 4.10431 26.6554 3.76078 27.5973 3.76078C28.0741 3.76078 28.4288 3.84516 28.6614 4.01391C28.8939 4.18266 29.0102 4.40566 29.0102 4.68289V4.80946L29.2021 3.85118H31.714L30.458 9.99861C30.4115 10.1794 30.3883 10.3723 30.3883 10.5772C30.3883 11.0955 30.6266 11.3547 31.1034 11.3547C31.429 11.3547 31.7081 11.198 31.9407 10.8846C32.1849 10.5712 32.3768 10.1613 32.5164 9.65508H33.249C32.8187 10.9569 32.2838 11.8428 31.6442 12.3129C31.0162 12.771 30.3824 13 29.7428 13C29.2544 13 28.859 12.8614 28.5567 12.5841C28.266 12.2949 28.0915 11.879 28.0334 11.3366C27.6961 11.8308 27.3182 12.2346 26.8996 12.548C26.4926 12.8493 26.0041 13 25.4343 13ZM26.5681 11.2462C26.8589 11.2462 27.1438 11.1076 27.4229 10.8303C27.7136 10.541 27.9113 10.1493 28.0159 9.65508L28.8532 5.56885C28.8532 5.41215 28.7951 5.26147 28.6788 5.11683C28.5625 4.96013 28.3823 4.88178 28.1381 4.88178C27.6729 4.88178 27.2542 5.16504 26.8821 5.73157C26.51 6.28605 26.2193 6.96106 26.0099 7.75661C25.8006 8.5401 25.696 9.23319 25.696 9.83588C25.696 10.4386 25.7774 10.8243 25.9402 10.993C26.1146 11.1618 26.3239 11.2462 26.5681 11.2462Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M34.5113 13C33.9531 13 33.4821 12.8915 33.0984 12.6745C32.7146 12.4455 32.4297 12.1562 32.2437 11.8067C32.0576 11.4451 31.9646 11.0714 31.9646 10.6857C31.9646 10.2879 32.0576 9.94437 32.2437 9.65508C32.4181 9.35373 32.6332 9.13676 32.8891 9.00417C33.3426 8.16041 33.738 7.31062 34.0752 6.4548C34.4125 5.58693 34.7323 4.65276 35.0346 3.6523L37.6162 3.29068C37.6744 4.83357 37.7732 6.50301 37.9128 8.29903C37.9709 9.02225 38 9.54659 38 9.87204C38 10.6073 37.8198 11.21 37.4593 11.6801C37.0988 12.1502 36.651 12.4877 36.1161 12.6926C35.5928 12.8975 35.0579 13 34.5113 13ZM33.9531 11.5716C34.3834 11.5716 34.7439 11.439 35.0346 11.1739C35.3253 10.9087 35.4707 10.4808 35.4707 9.89013C35.4707 9.52851 35.4358 9.02225 35.366 8.37135C35.2497 6.99722 35.1742 6.0751 35.1393 5.60501C34.8602 6.55726 34.3892 7.69634 33.7264 9.02225C33.9938 9.1669 34.1276 9.37784 34.1276 9.65508C34.1276 9.8841 34.052 10.089 33.9008 10.2698C33.7612 10.4506 33.581 10.541 33.36 10.541C33.1158 10.541 32.9588 10.4627 32.8891 10.306C32.8891 10.7399 32.9705 11.0593 33.1333 11.2643C33.3077 11.4692 33.581 11.5716 33.9531 11.5716Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <div class="post-controls flex items-center">
+                  <button class="captions-btn relative">
+                    <svg viewBox="0 0 24 24" class="transform">
+                      <path
+                        fill="currentColor"
+                        d="M18,11H16.5V10.5H14.5V13.5H16.5V13H18V14A1,1 0 0,1 17,15H14A1,1 0 0,1 13,14V10A1,1 0 0,1 14,9H17A1,1 0 0,1 18,10M11,11H9.5V10.5H7.5V13.5H9.5V13H11V14A1,1 0 0,1 10,15H7A1,1 0 0,1 6,14V10A1,1 0 0,1 7,9H10A1,1 0 0,1 11,10M19,4H5C3.89,4 3,4.89 3,6V18A2,2 0 0,0 5,20H19A2,2 0 0,0 21,18V6C21,4.89 20.1,4 19,4Z"
+                      />
+                    </svg>
+                  </button>
+                  <button class="full-screen-btn expand-cursor">
+                    <svg
+                      class="open expand-cursor transform"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
+                      />
+                    </svg>
+                    <svg
+                      class="close expand-cursor transform"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="video-controls-container opacity-0 bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0 right-0 text-white z-[99] hidden lg:flex items-center justify-between px-[5px] py-[30px] 2xl:py-[2vw] gap-[.5rem] h-[30px]"
+            >
+              <div class="pre-controls flex items-center gap-[.5rem] h-full">
+                <button
+                  class="play-pause-btn h-full hidden lg:block expand-cursor cursor-pointer"
+                >
+                  <svg
+                    class="play-icon transform expand-cursor cursor-pointer w-full h-auto"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      class="expand-cursor cursor-pointer"
+                      fill="currentColor"
+                      d="M8,5.14V19.14L19,12.14L8,5.14Z"
+                    />
+                  </svg>
+                  <svg
+                    class="pause-icon transform expand-cursor cursor-pointer"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      class="expand-cursor cursor-pointer"
+                      fill="currentColor"
+                      d="M14,19H18V5H14M6,19H10V5H6V19Z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="volume-container md:flex items-center relative hidden flex-col cursor-pointer"
+                >
+                  <div
+                    class="volume-slider h-[100px] pb-[10px] pt-[20px] w-[20px] absolute flex flex-col items-center cursor-pointer"
+                  >
+                    <div
+                      class="w-[4px] h-full relative bg-white cursor-pointer"
+                    >
+                      <div
+                        class="volume-indicator w-[15px] h-[15px] bg-white rounded-full expand-cursor cursor-pointer"
+                      ></div>
+                    </div>
+                  </div>
+                  <button class="volume-btn expand-cursor cursor-pointer">
+                    <svg
+                      class="volume-high-icon transform expand-cursor cursor-pointer"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        class="expand-cursor cursor-pointer"
+                        fill="currentColor"
+                        d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z"
+                      />
+                    </svg>
+                    <svg
+                      class="volume-low-icon transform expand-cursor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        class="expand-cursor"
+                        fill="currentColor"
+                        d="M5,9V15H9L14,20V4L9,9M18.5,12C18.5,10.23 17.5,8.71 16,7.97V16C17.5,15.29 18.5,13.76 18.5,12Z"
+                      />
+                    </svg>
+                    <svg
+                      class="volume-muted-icon transform expand-cursor cursor-pointer"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        class="expand-cursor cursor-pointer"
+                        fill="currentColor"
+                        d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.46 14,18.7V20.77C15.38,20.45 16.63,19.82 17.68,18.96L19.73,21L21,19.73L12,10.73M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M16.5,12C16.5,10.23 15.5,8.71 14,7.97V10.18L16.45,12.63C16.5,12.43 16.5,12.21 16.5,12Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div
+                  class="duration-container flex items-center text-[14px] lg:text-base 2xl:text-xl 3xl:text-2xl"
+                >
+                  <div class="current-time">0:00</div>
+                  /
+                  <div class="total-time">0:00</div>
+                </div>
+              </div>
+              <div
+                class="timeline-container bg-transparent h-[30px] flex-grow flex items-center relative mx-[.5em] sm:mx-[1em] expand-cursor cursor-pointer"
+              >
+                <div
+                  class="track absolute left-0 w-full top-1/2 transform -translate-y-1/2 bg-slate-400 expand-cursor cursor-pointer"
+                ></div>
+                <div
+                  class="timeline h-[3px] bg-white relative expand-cursor cursor-pointer"
+                >
+                  <div
+                    class="thumb-indicator absolute top-1/2 right-0 w-[15px] h-[15px] 2xl:w-[20px] 2xl:h-[20px] 3xl:w-[25px] 3xl:h-[25px] rounded-full bg-white expand-cursor cursor-pointer"
+                  ></div>
+                </div>
+              </div>
+              <div class="video-player-logo w-[50px]">
+                <svg
+                  width="38"
+                  height="13"
+                  viewBox="0 0 38 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-full h-auto"
+                >
+                  <path
+                    d="M2.14554 13C1.47106 13 0.941946 12.8252 0.55819 12.4757C0.186063 12.114 0 11.5777 0 10.8665C0 10.5772 0.0290724 10.2879 0.0872172 9.99861L1.34315 3.85118H3.855L2.59907 9.99861C2.54093 10.3 2.51186 10.5169 2.51186 10.6495C2.51186 11.0473 2.70955 11.2462 3.10493 11.2462C3.63987 11.2462 4.1341 10.8966 4.58763 10.1975C5.05278 9.49838 5.42491 8.66667 5.70401 7.70236C5.9831 6.73806 6.12265 5.90635 6.12265 5.20723C6.09939 5.2675 6.0238 5.31572 5.89588 5.35188C5.76797 5.37599 5.65749 5.38804 5.56446 5.38804C5.36677 5.38804 5.20978 5.29161 5.09349 5.09875C4.98883 4.90589 4.9365 4.69495 4.9365 4.46593C4.9365 4.17663 5.02371 3.94159 5.19815 3.76078C5.38421 3.57997 5.65749 3.48957 6.01799 3.48957C6.40174 3.48957 6.68084 3.64024 6.85527 3.94159C7.02971 4.23088 7.11693 4.60454 7.11693 5.06259C7.11693 6.14743 6.93668 7.31062 6.57618 8.55216C6.21568 9.78164 5.66331 10.8303 4.91905 11.6982C4.1748 12.5661 3.2503 13 2.14554 13Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M10.2927 2.87483C9.90897 2.87483 9.58336 2.73621 9.31589 2.45897C9.04842 2.18173 8.91469 1.84423 8.91469 1.44645C8.91469 1.04868 9.04842 0.711174 9.31589 0.433937C9.58336 0.144646 9.90897 0 10.2927 0C10.6765 0 11.0021 0.144646 11.2696 0.433937C11.5487 0.711174 11.6882 1.04868 11.6882 1.44645C11.6882 1.84423 11.5487 2.18173 11.2696 2.45897C11.0021 2.73621 10.6765 2.87483 10.2927 2.87483ZM9.10657 13C8.54838 13 8.09485 12.8192 7.74598 12.4576C7.40874 12.096 7.24012 11.5535 7.24012 10.8303C7.24012 10.529 7.28664 10.1372 7.37967 9.65508L8.56582 3.85118H11.0777L9.82175 9.99861C9.77523 10.1794 9.75198 10.3723 9.75198 10.5772C9.75198 10.8183 9.80431 10.993 9.90897 11.1015C10.0253 11.198 10.2113 11.2462 10.4672 11.2462C10.8044 11.2462 11.1184 11.1015 11.4091 10.8122C11.6998 10.5109 11.9091 10.1252 12.0371 9.65508H12.7697C12.3394 10.9569 11.787 11.8428 11.1126 12.3129C10.4381 12.771 9.76942 13 9.10657 13Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M14.0187 13C13.4605 13 12.9895 12.8915 12.6058 12.6745C12.222 12.4455 11.9371 12.1562 11.751 11.8067C11.565 11.4451 11.4719 11.0714 11.4719 10.6857C11.4719 10.2879 11.565 9.94437 11.751 9.65508C11.9255 9.35373 12.1406 9.13676 12.3964 9.00417C12.85 8.16041 13.2453 7.31062 13.5826 6.4548C13.9198 5.58693 14.2396 4.65276 14.542 3.6523L17.1236 3.29068C17.1817 4.83357 17.2806 6.50301 17.4201 8.29903C17.4783 9.02225 17.5074 9.54659 17.5074 9.87204C17.5074 10.1493 17.4841 10.3783 17.4376 10.5591C17.9841 10.2337 18.4028 9.93231 18.6935 9.65508H19.4261C18.6819 10.5471 17.7923 11.3004 16.7573 11.9152C16.4201 12.2888 16.0014 12.5661 15.5014 12.7469C15.0129 12.9156 14.5187 13 14.0187 13ZM13.4605 11.5716C13.8908 11.5716 14.2512 11.439 14.542 11.1739C14.8327 10.9087 14.9781 10.4808 14.9781 9.89013C14.9781 9.52851 14.9432 9.02225 14.8734 8.37135C14.7571 6.99722 14.6815 6.0751 14.6466 5.60501C14.3675 6.55726 13.8966 7.69634 13.2337 9.02225C13.5012 9.1669 13.6349 9.37784 13.6349 9.65508C13.6349 9.8841 13.5593 10.089 13.4081 10.2698C13.2686 10.4506 13.0884 10.541 12.8674 10.541C12.6232 10.541 12.4662 10.4627 12.3964 10.306C12.3964 10.7399 12.4778 11.0593 12.6406 11.2643C12.8151 11.4692 13.0884 11.5716 13.4605 11.5716Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M20.4176 13C19.8594 13 19.4058 12.8192 19.057 12.4576C18.7197 12.096 18.5511 11.5535 18.5511 10.8303C18.5511 10.529 18.5976 10.1372 18.6907 9.65508L19.7373 4.57441H19.1616L19.3012 3.85118H19.8768L20.4001 1.35605L22.9817 0.994437L22.3887 3.85118H23.4353L23.2957 4.57441H22.2491L21.1327 9.99861C21.0862 10.1794 21.063 10.3723 21.063 10.5772C21.063 10.8183 21.1153 10.993 21.22 11.1015C21.3362 11.198 21.5223 11.2462 21.7781 11.2462C22.1154 11.2462 22.4294 11.1015 22.7201 10.8122C23.0108 10.5109 23.2201 10.1252 23.3481 9.65508H24.0807C23.6504 10.9569 23.098 11.8428 22.4235 12.3129C21.7491 12.771 21.0804 13 20.4176 13Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M25.4343 13C24.7715 13 24.2191 12.765 23.7772 12.2949C23.3353 11.8248 23.1143 11.0895 23.1143 10.089C23.1143 9.19703 23.283 8.26287 23.6202 7.28651C23.9691 6.2981 24.4807 5.46639 25.1552 4.79138C25.8413 4.10431 26.6554 3.76078 27.5973 3.76078C28.0741 3.76078 28.4288 3.84516 28.6614 4.01391C28.8939 4.18266 29.0102 4.40566 29.0102 4.68289V4.80946L29.2021 3.85118H31.714L30.458 9.99861C30.4115 10.1794 30.3883 10.3723 30.3883 10.5772C30.3883 11.0955 30.6266 11.3547 31.1034 11.3547C31.429 11.3547 31.7081 11.198 31.9407 10.8846C32.1849 10.5712 32.3768 10.1613 32.5164 9.65508H33.249C32.8187 10.9569 32.2838 11.8428 31.6442 12.3129C31.0162 12.771 30.3824 13 29.7428 13C29.2544 13 28.859 12.8614 28.5567 12.5841C28.266 12.2949 28.0915 11.879 28.0334 11.3366C27.6961 11.8308 27.3182 12.2346 26.8996 12.548C26.4926 12.8493 26.0041 13 25.4343 13ZM26.5681 11.2462C26.8589 11.2462 27.1438 11.1076 27.4229 10.8303C27.7136 10.541 27.9113 10.1493 28.0159 9.65508L28.8532 5.56885C28.8532 5.41215 28.7951 5.26147 28.6788 5.11683C28.5625 4.96013 28.3823 4.88178 28.1381 4.88178C27.6729 4.88178 27.2542 5.16504 26.8821 5.73157C26.51 6.28605 26.2193 6.96106 26.0099 7.75661C25.8006 8.5401 25.696 9.23319 25.696 9.83588C25.696 10.4386 25.7774 10.8243 25.9402 10.993C26.1146 11.1618 26.3239 11.2462 26.5681 11.2462Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M34.5113 13C33.9531 13 33.4821 12.8915 33.0984 12.6745C32.7146 12.4455 32.4297 12.1562 32.2437 11.8067C32.0576 11.4451 31.9646 11.0714 31.9646 10.6857C31.9646 10.2879 32.0576 9.94437 32.2437 9.65508C32.4181 9.35373 32.6332 9.13676 32.8891 9.00417C33.3426 8.16041 33.738 7.31062 34.0752 6.4548C34.4125 5.58693 34.7323 4.65276 35.0346 3.6523L37.6162 3.29068C37.6744 4.83357 37.7732 6.50301 37.9128 8.29903C37.9709 9.02225 38 9.54659 38 9.87204C38 10.6073 37.8198 11.21 37.4593 11.6801C37.0988 12.1502 36.651 12.4877 36.1161 12.6926C35.5928 12.8975 35.0579 13 34.5113 13ZM33.9531 11.5716C34.3834 11.5716 34.7439 11.439 35.0346 11.1739C35.3253 10.9087 35.4707 10.4808 35.4707 9.89013C35.4707 9.52851 35.4358 9.02225 35.366 8.37135C35.2497 6.99722 35.1742 6.0751 35.1393 5.60501C34.8602 6.55726 34.3892 7.69634 33.7264 9.02225C33.9938 9.1669 34.1276 9.37784 34.1276 9.65508C34.1276 9.8841 34.052 10.089 33.9008 10.2698C33.7612 10.4506 33.581 10.541 33.36 10.541C33.1158 10.541 32.9588 10.4627 32.8891 10.306C32.8891 10.7399 32.9705 11.0593 33.1333 11.2643C33.3077 11.4692 33.581 11.5716 33.9531 11.5716Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div class="post-controls flex items-center cursor-pointer">
+                <button
+                  class="captions-btn expand-cursor cursor-pointer flex items-center justify-center"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="transform expand-cursor cursor-pointer"
+                  >
+                    <path
+                      class="expand-cursor cursor-pointer"
+                      fill="currentColor"
+                      d="M18,11H16.5V10.5H14.5V13.5H16.5V13H18V14A1,1 0 0,1 17,15H14A1,1 0 0,1 13,14V10A1,1 0 0,1 14,9H17A1,1 0 0,1 18,10M11,11H9.5V10.5H7.5V13.5H9.5V13H11V14A1,1 0 0,1 10,15H7A1,1 0 0,1 6,14V10A1,1 0 0,1 7,9H10A1,1 0 0,1 11,10M19,4H5C3.89,4 3,4.89 3,6V18A2,2 0 0,0 5,20H19A2,2 0 0,0 21,18V6C21,4.89 20.1,4 19,4Z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="full-screen-btn expand-cursor cursor-pointer flex items-center justify-center"
+                >
+                  <svg class="open expand-cursor transform" viewBox="0 0 24 24">
+                    <path
+                      class="expand-cursor cursor-pointer"
+                      fill="currentColor"
+                      d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
+                    />
+                  </svg>
+                  <svg
+                    class="close expand-cursor transform cursor-pointer"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      class="expand-cursor cursor-pointer"
+                      fill="currentColor"
+                      d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <video
+              src="../assets/video.mp4"
+              class="w-full aspect-video max-h-[100vh]"
+            >
+              <track
+                class="absolute bottom-5"
+                kind="captions"
+                srclang="en"
+                src="../assets/captions.vtt"
+              />
+            </video>
+          </div>
+        </div>
+        <div
+          id="slider-phone"
+          class="mb-12 font-semibold bg-primary text-background aspect-video px-4 flex flex-col justify-between pb-8 about-container lg:hidden min-h-[100vh] w-full"
+        >
+          <div
+            class="py-6 border-solid border-background border-b-[1px] flex justify-between items-center text-[2.6vh]"
+          >
+            <span class="font-normal">Choose a year</span>
+            <div
+              class="font-bold toggle-choose-year cursor-pointer expand-cursor flex items-center gap-1"
+            >
+              <span class="year-text expand-cursor">2021</span>
+              <i class="fa-solid fa-chevron-down year-icon expand-cursor"></i>
+            </div>
+          </div>
+          <div class="text-[2vh] flex-grow choose-year hidden">
+            <div
+              class="py-5 px-10 border-solid border-background border-b-[1px]"
+            >
+              2021
+            </div>
+            <div
+              class="py-5 px-10 border-solid border-background border-b-[1px]"
+            >
+              2022
+            </div>
+            <div
+              class="py-5 px-10 border-solid border-background border-b-[1px]"
+            >
+              2023
+            </div>
+          </div>
+          <div class="flex overflow-x-hidden flex-grow about relative">
+            <div
+              class="flex flex-col w-full flex-shrink-0 slide-1 overflow-x-hidden"
+            >
+              <div class="flex flex-col self-center w-[40vh] mt-5">
+                <div class="text-[3.8vh] leading-snug">
+                  Humble<br />
+                  Beginnings
+                </div>
+                <div class="text-[12vh]">2021</div>
+                <div class="relative mb-10">
+                  <img src="../images/about-image-1.jpeg" alt="" />
+                  <div
+                    class="absolute right-[-10%] bottom-[10%] h-[35%] w-[35%] rounded-full bg-background-2 flex flex-col items-center justify-center text-[1.9vh]"
+                  >
+                    <span class="leading-tight">Scroll To<br />Explore</span>
+                    <div class="fa-solid fa-arrow-right-long"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col items-center w-full flex-shrink-0 slide-1"
+            >
+              <div
+                class="w-[40vh] h-full flex flex-col justify-between py-7 relative pb-20"
+              >
+                <div
+                  class="absolute right-0 bottom-1/3 transform translate-y-1/2 w-[35vh] h-[35vh] rounded-full z-0 bg-image-1 bg-center bg-cover bg-no-repeat"
+                ></div>
+                <div
+                  class="flex flex-col gap-3 mr-4 text-[2.5vh] leading-tight"
+                >
+                  <p>
+                    One man, an idea, a strategy, and one goal: To far exceed
+                    client expectations.
+                  </p>
+                  <p>
+                    Curtis Porter established Investment Group with the mission
+                    of providing strategic advisory management consulting
+                    services to clients who believe that results matter.
+                  </p>
+                </div>
+                <div class="static z-10">
+                  <h2 class="text-[7vh] leading-tight text-center">
+                    Established<br />March 18
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col items-center w-full flex-shrink-0 slide-1"
+            >
+              <div
+                class="w-[40vh] h-full flex flex-col py-7 items-start justify-center text-[7vh] font-normal gap-3"
+              >
+                <div class="about-underline">1 Employee</div>
+                <div class="about-underline">2 Contacts</div>
+                <div class="about-underline">3 Clients</div>
+              </div>
+            </div>
+            <div
+              class="flex justify-center gap-3 slider-controls-1 absolute bottom-0 w-full"
+            >
+              <div
+                class="w-[12px] h-[12px] rounded-full bg-background expand-cursor cursor-pointer"
+              ></div>
+              <div
+                class="w-[12px] h-[12px] rounded-full border-solid border-background border-[1px] expand-cursor cursor-pointer"
+              ></div>
+              <div
+                class="w-[12px] h-[12px] rounded-full border-solid border-background border-[1px] expand-cursor cursor-pointer"
+              ></div>
+            </div>
+          </div>
+          <div
+            class="flex-grow flex flex-col items-center bg-background-2 about hidden"
+          >
+            <div class="w-[40vh] h-full py-10 flex flex-col justify-between">
+              <div
+                class="w-[18vh] h-[18vh] bg-blue-500 bg-image-2 bg-cover bg-center bg-no-repeat"
+              ></div>
+              <h2 class="text-[5vh] leading-tight">
+                Rapid Growth <br />
+                Built on Results
+              </h2>
+              <div class="text-[14vh]">2022</div>
+              <div class="text-[5vh]">+3 New Clients</div>
+              <div class="flex flex-col text-[2.3vh]">
+                <span>Investment Group adds their</span>
+                <span>first commercial client</span>
+              </div>
+            </div>
+          </div>
+          <div v class="flex-grow flex flex-col items-center about hidden">
+            <div class="w-[40vh] h-full py-10 flex flex-col justify-between">
+              <div class="flex justify-between items-center">
+                <div class="text-[7.5vh] font-light">2023</div>
+                <div class="flex flex-col text-[3.2vh]">
+                  <span>Growth</span>
+                  <span>Brings Scale</span>
+                </div>
+              </div>
+              <div class="text-[2.3vh] font-light">
+                Investment Group is awarded a contract to support the
+                modernization of satellite communications for the national
+                airspace system in Alaska.
+              </div>
+              <div class="text-[2.7vh]">
+                Value of modernization efforts: $500M
+              </div>
+              <div
+                class="w-full h-[23vh] bg-image-3 bg-center bg-cover bg-no-repeat"
+              ></div>
+              <div class="flex justify-between items-center">
+                <div class="flex">
+                  <div
+                    class="h-[3.8vh] w-[3.8vh] rounded-full bg-background-2"
+                  ></div>
+                  <div
+                    class="h-[3.8vh] w-[3.8vh] rounded-full bg-background-2"
+                  ></div>
+                  <div
+                    class="h-[3.8vh] w-[3.8vh] rounded-full bg-background-2"
+                  ></div>
+                  <div
+                    class="h-[3.8vh] w-[3.8vh] rounded-full bg-background-2"
+                  ></div>
+                </div>
+                <div class="text-[2.8vh] font-light">+4 new clients</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="about-container"
+          class="h-[100vh] hidden lg:flex min-w-[100vw] bg-primary text-background overflow-x-hidden relative"
+        >
+          <div
+            class="flex flex-shrink-0 items-center ml-[5vw] mr-[30vh] section"
+          >
+            <div class="mr-[20vh]">
+              <div class="text-[8vh] leading-tight">
+                Humble<br />
+                Beginnings
+              </div>
+              <div class="text-[18vh]">2021</div>
+              <div
+                class="w-full h-[12vh] bg-image-5 bg-left bg-contain bg-no-repeat"
+              ></div>
+            </div>
+            <div
+              class="w-[60vh] h-[60vh] bg-image-6 bg-cover bg-center bg-no-repeat relative"
+            >
+              <div
+                class="absolute right-[-20%] bottom-[10%] h-[35%] w-[35%] rounded-full bg-background-2 flex flex-col items-center justify-center text-[2.8vh]"
+              >
+                <span class="leading-tight">Scroll To<br />Explore</span>
+                <div class="fa-solid fa-arrow-right-long"></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-shrink-0 flex-col items-start justify-center mr-[30vh] section pb-10"
+          >
+            <div
+              class="text-[3.5vh] leading-tight flex flex-col gap-[2.3vh] relative z-10"
+            >
+              <div
+                class="absolute top-0 right-[-35vh] w-[60vh] h-[60vh] rounded-full z-0 bg-image-1 bg-contain bg-left-top bg-no-repeat"
+              ></div>
+              <p>
+                One man, an idea, a strategy, and one goal:<br />
+                To far exceed client expectations.
+              </p>
+              <p>
+                Curtis Porter established Investment Group<br />
+                with the mission of providing strategic<br />
+                advisory management consulting services<br />
+                to clients who believe that results matter.
+              </p>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[18vh]">Established</span>
+              <span class="text-[21vh] mt-[-7vh] font-medium">March 18</span>
+            </div>
+          </div>
+          <div
+            class="flex flex-shrink-0 flex-col items-start justify-center mr-[30vh] text-[15vh] section"
+          >
+            <div class="about-underline">1 Employee</div>
+            <div class="about-underline">2 Contracts</div>
+            <div class="about-underline">3 Clients</div>
+          </div>
+          <div
+            class="flex-shrink-0 mr-[15vh] flex items-center py-[12vh] px-[10vh] bg-background-2 section"
+          >
+            <div class="flex flex-col justify-between h-full">
+              <div class="text-[15vh] leading-none">
+                Rapid Growth<br />
+                Built on Results
+              </div>
+              <div class="text-[40vh] leading-none">2022</div>
+            </div>
+            <div class="flex flex-col justify-between h-full">
+              <div
+                class="w-[35vh] h-[40vh] bg-image-2 bg-cover bg-no-repeat bg-center self-end"
+              ></div>
+              <div class="text-end">
+                <div class="text-[7vh]">+3 New Clients</div>
+                <div>Investment Group<br />first commercial client</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col flex-shrink-0 justify-between py-[12vh] pr-[15vh] section"
+          >
+            <div class="flex items-center justify-between">
+              <div class="text-[18vh] mr-[4vh] leading-none">2023</div>
+              <div class="leading-tight text-[6vh] mr-auto">
+                Growth<br />Brings Scale
+              </div>
+              <div>
+                <div class="flex">
+                  <div
+                    class="w-[5vh] h-[5vh] rounded-full bg-background-2"
+                  ></div>
+                  <div
+                    class="w-[5vh] h-[5vh] rounded-full bg-background-2"
+                  ></div>
+                  <div
+                    class="w-[5vh] h-[5vh] rounded-full bg-background-2"
+                  ></div>
+                  <div
+                    class="w-[5vh] h-[5vh] rounded-full bg-background-2"
+                  ></div>
+                </div>
+                <div class="text-[3.5vh]">+4 New Clients</div>
+              </div>
+            </div>
+            <div class="flex gap-[5vh]">
+              <div>
+                <div class="text-[3vh] mb-[5.5vh]">
+                  Investment Group is awarded a<br />
+                  contract to support<br />
+                  the modernization of satellite<br />
+                  communications for<br />
+                  the national airspace system<br />
+                  in Alaska.
+                </div>
+                <div class="text-[3.7vh] font-medium leading-tight">
+                  Value of modernization<br />
+                  efforts: $500M
+                </div>
+              </div>
+              <div
+                class="w-[80vh] h-[45vh] bg-red-600 bg-image-3 bg-cover bg-center bg-np-repeat"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="rotate-phone bg-image-4 bg-cover bg-center bg-no-repeat h-[100vh] hidden text-primary"
+        >
+          <div
+            class="flex items-center justify-center h-full flex-col text-[4vw]"
+          >
+            <i class="fa-solid fa-mobile block transform rotate-[20deg]"></i>
+            <span>Please rotate your phone</span>
+          </div>
+        </div>
+        <div class="hidden md:block lg:mx-14 xl:mx-20 my-24">
+          <div class="w-full h-[1px] bg-primary"></div>
+        </div>
+        <div class="m-6 lg:mx-14 xl:mx-20 mb-12 text-[6vw] text-center">
+          <h3 class="text-[8.5vw] mb-10 md:text-[4.5vw]">
+            Dynamic. Goal-oriented. Value-driven.
+          </h3>
+          <p class="mb-10 text-[4vw] md:text-[2vw]">
+            These values define Investment Group consultants.
+            <br class="hidden md:block" />If they apply to you and your needs,
+            let's chat.
+          </p>
+          <button
+            class="px-12 py-5 bg-background-2 text-background expand-cursor text-[5vw] font-medium md:text-[1.4vw] md:px-6 md:py-2"
+          >
+            Get In Touch
+          </button>
+        </div>
+      </main>
+      <div class="m-6 mb-32 relative">
+        <div
+          id="back-to-top"
+          class="absolute hidden lg:flex items-center justify-between gap-[2vw] right-[5vw] top-1/2 transform -translate-y-1/2 h-[10vw] bg-background px-[2vw] expand-cursor cursor-pointer"
+        >
+          <div class="text-[1vw] font-semibold expand-cursor">Back to top</div>
+          <div
+            class="w-[5vw] h-[5vw] bg-none border-solid border-primary border-[1px] rounded-full flex justify-center items-center expand-cursor"
+          >
+            <i class="fa-solid fa-arrow-up-long text-[1.5vw] expand-cursor"></i>
+          </div>
+        </div>
+        <div class="w-full h-[1px] bg-primary"></div>
+      </div>
+      <footer
+        class="flex flex-col text-[5vw] m-6 lg:mx-14 xl:mx-20 md:flex-row md:text-[1.2vw] lg:text-[1.1vw] justify-between"
+      >
+        <div class="flex flex-col mb-10">
+          <span>info@investmentgroup.com</span>
+          <span>+212 511 22 33 44</span>
+        </div>
+        <div class="flex flex-col mb-10">
+          <span>Investment Group QG</span>
+          <span>SALE, 11000</span>
+        </div>
+        <div class="grid grid-cols-2 grid-rows-2 mb-10 opacity-50">
+          <span>Instagram</span>
+          <span>Twitter</span>
+          <span>Linkedin</span>
+          <span>Indeed</span>
+        </div>
+        <div class="flex flex-col mb-10 opacity-50">
+          <span>Legal</span>
+          <span>InvestGroup@2023</span>
+        </div>
+      </footer>
+      <div
+        id="page-transition"
+        class="w-[100vw] h-[100vh] bg-primary fixed top-0 left-0 z-[500]"
+      ></div>
+      <div
+        id="page-transition-out"
+        class="w-[100vw] h-[100vh] bg-primary fixed top-0 left-0 z-[500] clip"
+      ></div>
+    </div>
+  </body>
+</html>
