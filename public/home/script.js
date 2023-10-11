@@ -24,9 +24,6 @@ const loading_animation_params = () => {
   if (!user) {
     localStorage.setItem("user", JSON.stringify({ date: new Date() }));
     loadingAnimation();
-    alert(
-      "Given the multipage architecture of this website, achieving smooth page transitions between routes without relying on any DOM manipulation was a more intricate task compared to what could have been accomplished using a JavaScript framework. \nTherefore, there is a slight chance that page transitions animations may not work properly. \nCheers."
-    );
     return;
   }
 
