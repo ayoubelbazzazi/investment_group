@@ -1,4 +1,4 @@
-import "./gsap.js";
+import "./svg-animations.js";
 import "../common/cursor.js";
 import "../common/phonenav.js";
 import "../common/header.js";
