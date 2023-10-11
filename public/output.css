@@ -838,6 +838,10 @@ body {
   margin-right: 1rem;
 }
 
+.mr-\[10\%\] {
+  margin-right: 10%;
+}
+
 .mr-\[15vh\] {
   margin-right: 15vh;
 }
@@ -2806,22 +2810,6 @@ header.hide {
     height: 15vh;
   }
 
-  .lg\:h-\[\] {
-    height: ;
-  }
-
-  .lg\:h-\[10vh\] {
-    height: 10vh;
-  }
-
-  .lg\:h-\[5vh\] {
-    height: 5vh;
-  }
-
-  .lg\:h-\[8vh\] {
-    height: 8vh;
-  }
-
   .lg\:h-\[6vh\] {
     height: 6vh;
   }
@@ -2926,14 +2914,6 @@ header.hide {
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:mb-\[2vw\] {
-    margin-bottom: 2vw;
-  }
-
-  .\32xl\:mb-\[20vw\] {
-    margin-bottom: 20vw;
-  }
-
   .\32xl\:mb-\[4vw\] {
     margin-bottom: 4vw;
   }
