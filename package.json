@@ -1,7 +1,7 @@
 {
   "name": "design-one",
   "version": "1.0.0",
-  "description": "This is my second design for my personal portfolio website",
+  "description": "First web design project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
