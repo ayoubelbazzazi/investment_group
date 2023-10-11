@@ -67,6 +67,7 @@ export const loadingAnimation = () => {
 
 
   const progressCalculator = async () => {
+    let begin = new Date()
     for (let i = 1; i <= 100; i++) {
       await delay(transformer(i))
       progress.innerText = `${i}%`;

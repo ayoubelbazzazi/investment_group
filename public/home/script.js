@@ -114,5 +114,3 @@ barba.init({
     },
   ],
 });
-
-console.log("Yeah it's working");

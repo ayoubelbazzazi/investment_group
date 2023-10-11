@@ -19,10 +19,6 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
       defer
     ></script>
-    <!-- <script
-      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"
-      defer
-    ></script> -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
       defer
@@ -64,14 +60,14 @@
         </div>
       </div>
       <div
-        class="fixed top-0 left-0 w-[45px] h-[45px] border-solid border-yellow-400 border-[1.5px] rounded-full transform -translate-x-1/2 -translate-y-1/2 click-through z-[450]"
+        class="fixed top-0 left-0 w-[45px] h-[45px] border-solid border-yellow-400 border-[1.5px] rounded-full transform -translate-x-1/2 -translate-y-1/2 click-through z-[450] 2xl:w-[4vw] 2xl:h-[4vw] 2xl:border-[.1vw]"
         id="pointer"
       ></div>
       <header
-        class="fixed top-0 left-0 w-full z-[300] bg-background invert-color"
+        class="fixed top-0 left-0 w-full z-[300] bg-background invert-color 2xl:pt-[3vw]"
       >
         <div
-          class="flex gap-6 items-center border-solid border-white border-b-[1px] lg:justify-between m-6 lg:mx-14 xl:mx-20 pb-5 mb-0 h-[100px] invert-color"
+          class="flex gap-6 items-center border-solid border-white border-b-[1px] lg:justify-between m-6 lg:mx-14 xl:mx-20 pb-5 mb-0 h-[100px] invert-color 2xl:pb-[4vw] 2xl:border-b-[.1vw]"
         >
           <div
             class="lg:hidden flex flex-col justify-between items-center md:gap-2 navigation-icon open-icon gap-1 expand-cursor cursor-pointer"
@@ -88,11 +84,15 @@
             href="../index.html"
             class="w-[50%] md:w-[30%] lg:w-[20%] logo expand-cursor"
           >
-            <img src="../images/logo.png" alt="logo" class="expand-cursor" />
+            <img
+              src="../images/logo.png"
+              alt="logo"
+              class="w-full expand-cursor"
+            />
           </a>
           <nav class="">
             <ul
-              class="capitalize hidden lg:flex gap-5 items-center xl:text-xl 2xl:text-2xl font-semibold xl:gap-10"
+              class="capitalize hidden lg:flex gap-5 items-center xl:text-xl 2xl:text-2xl font-semibold xl:gap-10 2xl:text-[1.1vw]"
             >
               <li class="nav-list relative block expand-cursor">About Us</li>
               <li
@@ -117,7 +117,7 @@
               </li>
               <a
                 href="/contact/index.html"
-                class="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 transition text-black cursor-pointer expand-cursor"
+                class="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 transition text-black cursor-pointer expand-cursor 2xl:px-[2vw] 2xl:py-[.8vw]"
               >
                 Contact
               </a>
@@ -161,10 +161,10 @@
           <span>Indeed</span>
         </div>
       </nav>
-      <main class="pt-40 md:pt-32 lg:pt-28 mb-32">
+      <main class="pt-40 md:pt-32 lg:pt-28 mb-32 2xl:pt-[10vw]">
         <div
           id="coordinates"
-          class="hidden lg:grid grid-cols-3 grid-rows-2 mt-5 mx-14 xl:mx-20 text-[10px] opacity-50 w-fit xl:text-base mb-20"
+          class="hidden lg:grid grid-cols-3 grid-rows-2 mt-5 mx-14 xl:mx-20 text-[10px] opacity-50 w-fit xl:text-base mb-20 2xl:text-[.7vw] 2xl:leading-[.9vw] 2xl:px-[3vw]"
         >
           <span>Sale, Morocco</span>
           <span>+212 611 22 33 44</span>
@@ -174,7 +174,7 @@
           <span>Info@Investmentgroupdc.com</span>
         </div>
         <div
-          class="m-6 lg:mx-14 xl:mx-20 mb-12 text-[7vw] font-semibold md:text-[3vw]"
+          class="m-6 lg:mx-14 xl:mx-20 mb-12 text-[7vw] font-semibold md:text-[3vw] 2xl:px-[3vw]"
         >
           <h1
             id="heading"
@@ -183,11 +183,10 @@
             our story
           </h1>
           <p class="mb-10 leading-tight md:font-light">
-            Investment Group is a
-            management consulting firm with more than a decade of experience
-            helping public and private sector clients achieve their goals
-            through effective and innovative consulting services. Our projects
-            have saved clients over $3 billion.
+            Investment Group is a management consulting firm with more than a
+            decade of experience helping public and private sector clients
+            achieve their goals through effective and innovative consulting
+            services. Our projects have saved clients over $3 billion.
           </p>
           <p class="leading-tight md:font-light">
             We earn our clients' trust every day by solving complex program
@@ -268,7 +267,7 @@
                 </svg>
               </button>
               <div
-                class="video-controls-container-mobile bg-transparent md:bg-black absolute bottom-0 left-0 right-0 text-white z-[99] flex items-center justify-between px-[5px] py-[10px] gap-[.5rem] h-[30px] w-full md:px-5 lg:hidden"
+                class="video-controls-container-mobile bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0 right-0 text-white z-[99] flex items-center justify-between px-[5px] py-[10px] gap-[.5rem] h-[30px] w-full md:px-5 lg:hidden"
               >
                 <div class="pre-controls flex items-center gap-[.5rem] h-full">
                   <div
@@ -611,9 +610,10 @@
                     client expectations.
                   </p>
                   <p>
-                    Curtis Porter established Investment Group with the mission
-                    of providing strategic advisory management consulting
-                    services to clients who believe that results matter.
+                    Ayoub El Bazzazi established Investment Group with the
+                    mission of providing strategic advisory management
+                    consulting services to clients who believe that results
+                    matter.
                   </p>
                 </div>
                 <div class="static z-10">
@@ -679,7 +679,7 @@
               <div class="text-[2.3vh] font-light">
                 Investment Group is awarded a contract to support the
                 modernization of satellite communications for the national
-                airspace system in Alaska.
+                airspace system in Morocco.
               </div>
               <div class="text-[2.7vh]">
                 Value of modernization efforts: $500M
@@ -749,7 +749,7 @@
                 To far exceed client expectations.
               </p>
               <p>
-                Curtis Porter established Investment Group<br />
+                Ayoub El Bazzazi established Investment Group<br />
                 with the mission of providing strategic<br />
                 advisory management consulting services<br />
                 to clients who believe that results matter.
@@ -821,7 +821,7 @@
                   the modernization of satellite<br />
                   communications for<br />
                   the national airspace system<br />
-                  in Alaska.
+                  in Morocco.
                 </div>
                 <div class="text-[3.7vh] font-medium leading-tight">
                   Value of modernization<br />

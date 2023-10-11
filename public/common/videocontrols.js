@@ -27,7 +27,6 @@ let isTouchScreen = Boolean(
   /Mobi|Android|iPhone|IEMobile|Opera Mini/i.test(navigator.userAgent)
 );
 
-console.log(videoContainer)
 
 window.addEventListener("resize", () => {
   isTouchScreen = Boolean(

@@ -32,8 +32,8 @@ document.addEventListener("mousemove", (e) => {
   window.addEventListener("mouseover", (e) => {
     if (!Array.from(e.target.classList).includes("expand-cursor")) {
       gsap.to("#pointer", {
-        width: "45px",
-        height: "45px",
+        width: window.innerWidth < 1536?"45px":"4vw",
+        height: window.innerWidth < 1536?"45px":"4vw",
         duration: 0.2,
       });
     }
@@ -42,8 +42,8 @@ document.addEventListener("mousemove", (e) => {
   expandCursor.forEach((element) => {
     element.addEventListener("mouseover", () => {
       gsap.to("#pointer", {
-        width: "80px",
-        height: "80px",
+        width: window.innerWidth < 1536?"80px":"8vw",
+        height: window.innerWidth < 1536?"80px":"8vw",
         duration: 0.2,
       });
     });

@@ -15,7 +15,6 @@ if (user) {
   }
 }
 
-console.log(first_visit)
 
 hoverSvg.forEach((element, i) => {
   element.addEventListener("mouseenter", () => {
