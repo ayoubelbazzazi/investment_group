@@ -177,7 +177,6 @@ header.hide {
   transition: opacity 150ms ease-in-out;
 }
 
-/* .video-container:hover .video-controls-container, */
 .video-controls-container.visible,
 .video-container.paused .video-controls-container {
   opacity: 1;
@@ -202,10 +201,6 @@ header.hide {
 .video-container:not(.paused) .play-icon-mobile {
   display: none;
 }
-
-/* .play-pause-animation-icon {
-  display:none
-} */
 
 .pause-animation-icon,
 .play-animation-icon {
