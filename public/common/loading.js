@@ -101,7 +101,7 @@ export const loading = () => {
     const visit_date = new Date(JSON.parse(localStorage.getItem("user")).date);
     const now = new Date();
     const time_diff = new Date(now - visit_date);
-    if (time_diff.getMinutes() > 0) {
+    if (time_diff.getMinutes() > 10) {
       loadingAnimation();
       localStorage.setItem("user", JSON.stringify({ date: new Date() }));
       return true;
