@@ -76,12 +76,10 @@ watchVideo.addEventListener("click", async () => {
 
 videoWrapper.addEventListener("click", (e) => {
   const body = document.querySelector("body");
-  // const iframe = videoWrapper.querySelector("iframe");
   if (e.target.id !== "video-wrapper") {
     return;
   }
   videoWrapper.classList.add("hidden");
-  // iframe.src = iframe.src;
   body.classList.remove("overflow-hidden");
   videoContainer.classList.remove("allow-keyboard-events");
   video.pause();
