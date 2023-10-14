@@ -62,7 +62,7 @@ export const loadingAnimation = () => {
   }
 
   function transformer (i) {
-    return 10 * Math.exp(i / 30 - 3/2);
+    return 1/100*Math.exp(i / 9 - 5/4);
   }
 
 
