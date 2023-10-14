@@ -1,20 +1,25 @@
 const hoverSvg = document.querySelectorAll(".hover-svg");
 const svgDrawings = gsap.utils.toArray(".svg-drawing");
 
+import { loading } from "../common/loading.js";
 import { drawing_animation, kill_animation } from "./helpers.js";
 
-let user = localStorage.getItem("user");
-let first_visit = true;
+let first_visit;
 
-if (user) {
-  const visit_date = new Date(JSON.parse(localStorage.getItem("user")).date);
-  const now = new Date();
-  const time_diff = new Date(now - visit_date);
-  if (time_diff.getMinutes() <= 10) {
-    first_visit = false;
-  }
-}
+// loading animation params
 
+window.addEventListener("load", () => {
+  first_visit = loading();
+
+  renderingAnimation(coordinatesSpan, first_visit ? 2.8 : 1, 0.1);
+  renderingAnimation(headingSpans, first_visit ? 2.8 : 1, 0.1);
+  renderingAnimation(headingDesktopSpans, first_visit ? 2.8 : 1, 0.1);
+
+  renderingAnimation("#paragraph", first_visit ? 3.3 : 1.5);
+  renderingAnimation("#watch-video", first_visit ? 3.5 : 1.7);
+  renderingAnimation("#scroll-container", first_visit ? 3.5 : 1.7);
+  renderingAnimation("#scrollTo", first_visit ? 3.5 : 2);
+});
 
 hoverSvg.forEach((element, i) => {
   element.addEventListener("mouseenter", () => {
@@ -108,15 +113,6 @@ gsap.to(headingSpans, {
   y: 50,
   duration: 0,
 });
-
-renderingAnimation(coordinatesSpan, first_visit ? 2.8 : 1, 0.1);
-renderingAnimation(headingSpans, first_visit ? 2.8 : 1, 0.1);
-renderingAnimation(headingDesktopSpans, first_visit ? 2.8 : 1, 0.1);
-
-renderingAnimation("#paragraph", first_visit ? 3.3 : 1.5);
-renderingAnimation("#watch-video", first_visit ? 3.5 : 1.7);
-renderingAnimation("#scroll-container", first_visit ? 3.5 : 1.7);
-renderingAnimation("#scrollTo", first_visit ? 3.5 : 2);
 
 // Marquee animation parameters
 

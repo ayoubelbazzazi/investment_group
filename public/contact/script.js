@@ -2,8 +2,7 @@ import "../common/cursor.js";
 import "../common/phonenav.js";
 import "../common/header.js";
 
-import { loadingAnimation } from "../common/loading.js";
-import { pageTransition } from "../common/page_transition.js";
+import { loading } from "../common/loading.js";
 const body = document.querySelector("body");
 const separator = document.querySelector("#separator");
 const inputs = document.querySelectorAll("input");
@@ -16,35 +15,14 @@ const transitionContainerOut = document.querySelector("#page-transition-out");
 
 window.scrollTo({ top: 0, behavior: "smooth" });
 
+let first_visit;
+
 // page transition params
 
-let first_visit = true;
-
-const loading_animation_params = () => {
-  const user = localStorage.getItem("user");
-  if (!user) {
-    localStorage.setItem("user", JSON.stringify({ date: new Date() }));
-    loadingAnimation();
-    return;
-  }
-
-  if (user) {
-    const visit_date = new Date(JSON.parse(localStorage.getItem("user")).date);
-    const now = new Date();
-    const time_diff = new Date(now - visit_date);
-    if (time_diff.getMinutes() > 10) {
-      loadingAnimation();
-      localStorage.setItem("user", JSON.stringify({ date: new Date() }));
-      return;
-    } else {
-      first_visit = false;
-      pageTransition();
-      return;
-    }
-  }
-};
-
-loading_animation_params();
+window.addEventListener("load", () => {
+  first_visit = loading();
+  renderAnimation()
+});
 
 // reload params
 
@@ -77,6 +55,18 @@ window.addEventListener("resize", () => {
   separator.style.height = `${body.getBoundingClientRect().height}px`;
 });
 
+function renderAnimation() {
+  gsap.set(headings, {
+    y: 50,
+  });
+
+  gsap.to(headings, {
+    opacity: 1,
+    y: 0,
+    delay: first_visit ? 3.2 : 1.3,
+  });
+}
+
 inputs.forEach((input, i) => {
   input.addEventListener("focus", () => {
     if (input.value !== "") {
@@ -102,16 +92,6 @@ inputs.forEach((input, i) => {
 
 button.addEventListener("click", (e) => {
   e.preventDefault();
-});
-
-gsap.set(headings, {
-  y: 50,
-});
-
-gsap.to(headings, {
-  opacity: 1,
-  y: 0,
-  delay: first_visit ? 3.2 : 1.3,
 });
 
 function delay(timeout) {

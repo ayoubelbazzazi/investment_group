@@ -2142,9 +2142,9 @@ header.hide {
   }
 }
 
-@media(min-width:1536px ) {
+@media (min-width: 1536px) {
   .nav-list::after {
-    display:none;
+    display: none;
   }
 }
 
@@ -2299,34 +2299,34 @@ header.hide {
 }
 
 .fast-forward .triangle,
-.fast-backward .triangle {
+.rewind .triangle {
   animation: fast-forward 1s;
   animation-iteration-count: infinite;
 }
 
-.fast-backward .triangle {
+.rewind .triangle {
   -webkit-clip-path: polygon(100% 0, 0 50%, 100% 100%);
           clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
 
 .fast-forward .triangle:nth-child(2),
-.fast-backward .triangle:nth-child(2) {
+.rewind .triangle:nth-child(2) {
   animation-delay: 100ms;
 }
 
 .fast-forward .triangle:nth-child(3),
-.fast-backward .triangle:nth-child(1) {
+.rewind .triangle:nth-child(1) {
   animation-delay: 200ms;
 }
 
 .fast-forward,
-.fast-backward {
+.rewind {
   opacity: 0;
   transition: opacity 100ms ease-in-out;
 }
 
 .fast-forward.visible,
-.fast-backward.visible {
+.rewind.visible {
   opacity: 1;
 }
 

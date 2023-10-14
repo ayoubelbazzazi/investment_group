@@ -3,8 +3,7 @@ import "../common/phonenav.js";
 import "../common/header.js";
 import "../common/videocontrols.js";
 
-import { loadingAnimation } from "../common/loading.js";
-import { pageTransition } from "../common/page_transition.js";
+import { loading } from "../common/loading.js";
 
 const aboutContainer = document.querySelector(".about-container"),
   slideControlsContainer = document.querySelector(".slider-controls-1"),
@@ -26,34 +25,12 @@ const aboutContainer = document.querySelector(".about-container"),
 
 // page transition params
 
-let first_visit = true;
+let first_visit;
 
-const loading_animation_params = () => {
-  const user = localStorage.getItem("user");
-  if (!user) {
-    localStorage.setItem("user", JSON.stringify({ date: new Date() }));
-    loadingAnimation();
-    return;
-  }
-
-  if (user) {
-    const visit_date = new Date(JSON.parse(localStorage.getItem("user")).date);
-    const now = new Date();
-    const time_diff = new Date(now - visit_date);
-    if (time_diff.getMinutes() > 10) {
-      loadingAnimation();
-      localStorage.setItem("user", JSON.stringify({ date: new Date() }));
-      return;
-    } else {
-      first_visit = false;
-      pageTransition();
-      return;
-    }
-  }
-};
-
-loading_animation_params();
-// loadingAnimation()
+window.addEventListener("load", () => {
+  first_visit = loading();
+  renderAnimation();
+});
 
 // reload params
 
@@ -224,33 +201,35 @@ barba.init({
 
 // Initial render animation
 
-const coordinates = gsap.utils.selector("#coordinates");
-const coordinatesSpan = coordinates("span");
+function renderAnimation() {
+  const coordinates = gsap.utils.selector("#coordinates");
+  const coordinatesSpan = coordinates("span");
 
-gsap.set(coordinatesSpan, {
-  y: 50,
-  opacity: 0,
-  duration: 0,
-});
+  gsap.set(coordinatesSpan, {
+    y: 50,
+    opacity: 0,
+    duration: 0,
+  });
 
-gsap.set("#heading", {
-  y: 50,
-  opacity: 0,
-  duration: 0,
-});
+  gsap.set("#heading", {
+    y: 50,
+    opacity: 0,
+    duration: 0,
+  });
 
-gsap.to(coordinatesSpan, {
-  y: 0,
-  opacity: 1,
-  stagger: 0.1,
-  delay: first_visit ? 3.5 : 1,
-});
+  gsap.to(coordinatesSpan, {
+    y: 0,
+    opacity: 1,
+    stagger: 0.1,
+    delay: first_visit ? 3.5 : 1,
+  });
 
-gsap.to("#heading", {
-  y: 0,
-  opacity: 1,
-  delay: first_visit ? 3.2 : 1,
-});
+  gsap.to("#heading", {
+    y: 0,
+    opacity: 1,
+    delay: first_visit ? 3.2 : 1,
+  });
+}
 
 // back to top
 

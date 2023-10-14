@@ -16,8 +16,8 @@ const video = document.querySelector("video"),
   timelineContainer = document.querySelector(".timeline-container"),
   fastForward = document.querySelector(".fast-forward"),
   fastForwardTimer = fastForward.querySelector(".timer"),
-  fastBackward = document.querySelector(".fast-backward"),
-  fastBackwardTimer = fastBackward.querySelector(".timer"),
+  rewind = document.querySelector(".rewind"),
+  rewindTimer = rewind.querySelector(".timer"),
   timelineContainerMobile = document.querySelector(
     ".timeline-container-mobile"
   ),
@@ -26,7 +26,6 @@ const video = document.querySelector("video"),
 let isTouchScreen = Boolean(
   /Mobi|Android|iPhone|IEMobile|Opera Mini/i.test(navigator.userAgent)
 );
-
 
 window.addEventListener("resize", () => {
   isTouchScreen = Boolean(
@@ -42,7 +41,8 @@ const threshold = 300;
 
 document.addEventListener("keydown", (e) => {
   if (isTouchScreen) return;
-  if(!Array.from(videoContainer.classList).includes("allow-keyboard-events")) return
+  if (!Array.from(videoContainer.classList).includes("allow-keyboard-events"))
+    return;
   const tagName = document.activeElement.tagName.toLowerCase();
   switch (e.key.toLowerCase()) {
     case " ":
@@ -68,7 +68,7 @@ document.addEventListener("keydown", (e) => {
       captionsBtn.forEach((btn) => toggleCaptions(btn));
       break;
     case "arrowleft":
-      fastBackwarding();
+      reswinding();
       break;
     case "arrowright":
       fastForwarding();
@@ -77,7 +77,6 @@ document.addEventListener("keydown", (e) => {
       break;
   }
 });
-
 
 // play pause controls
 
@@ -120,18 +119,18 @@ function videoClick() {
   clickCounter = 0;
 }
 
-// fast forward/backward
+// fast forward/rewind
 
 let lastTimePressRight = new Date().getTime();
 let lastTimePressLeft = new Date().getTime();
 let pressTimeout;
 let fastForwardCounter = 0;
-let fastBackwardCounter = 0;
+let rewindCounter = 0;
 
 function fastForwarding() {
   if (video.currentTime === video.duration) return;
-  fastBackward.classList.remove("visible");
-  fastBackwardCounter = 0;
+  rewind.classList.remove("visible");
+  rewindCounter = 0;
   const currentTime = new Date().getTime();
 
   if (currentTime - lastTimePressRight < 1000) {
@@ -149,7 +148,7 @@ function fastForwarding() {
   }, 1000);
 }
 
-function fastBackwarding() {
+function reswinding() {
   if (video.currentTime < 1) return;
   fastForward.classList.remove("visible");
   fastForwardCounter = 0;
@@ -158,15 +157,15 @@ function fastBackwarding() {
   if (currentTime - lastTimePressLeft < 1000) {
     clearTimeout(pressTimeout);
   }
-  fastBackwardCounter += 5;
-  fastBackwardTimer.innerText = `${fastBackwardCounter}`;
-  fastBackward.classList.add("visible");
+  rewindCounter += 5;
+  rewindTimer.innerText = `${rewindCounter}`;
+  rewind.classList.add("visible");
   skip(-5);
   lastTimePressLeft = currentTime;
 
   pressTimeout = setTimeout(() => {
-    fastBackward.classList.remove("visible");
-    fastBackwardCounter = 0;
+    rewind.classList.remove("visible");
+    rewindCounter = 0;
   }, 1000);
 }
 
@@ -251,10 +250,10 @@ fullScreenBtn.forEach((btn) => {
 function toggleFullScreen() {
   if (document.fullscreenElement == null) {
     videoContainer.requestFullscreen();
-    videoControls.classList.remove("visible")
+    videoControls.classList.remove("visible");
   } else {
     document.exitFullscreen();
-    videoControls.classList.remove("visible")
+    videoControls.classList.remove("visible");
   }
 }
 
@@ -265,14 +264,12 @@ document.addEventListener("fullscreenchange", () => {
 let showControlsTimeout;
 videoContainer.addEventListener("mousemove", () => {
   clearTimeout(showControlsTimeout);
-  videoControls.classList.add("visible")
+  videoControls.classList.add("visible");
   if (isScrubbing) return;
   showControlsTimeout = setTimeout(() => {
-    videoControls.classList.remove("visible")
+    videoControls.classList.remove("visible");
   }, [3000]);
 });
-
-
 
 // captions controls
 
@@ -390,7 +387,7 @@ const doubletap = {
   right: false,
   doubleTapping: false,
   fastForwardTimer: 0,
-  fastBackwardTimer: 0,
+  rewindTimer: 0,
   lastTapTime: 0,
 };
 
@@ -483,7 +480,7 @@ function videoContainerTouch(e) {
   video_controls.showVideoControls = !showVideoControls;
 }
 
-// fast forward/backward
+// fast forward/rewind
 
 videoContainer.addEventListener("touchstart", (e) => {
   if (!isTouchScreen) return;
@@ -541,7 +538,7 @@ function doubleTapLeft(e) {
     return;
   }
   if (doubletap.left) {
-    fastBackwardingMobile(currentTime);
+    reswindingMobile(currentTime);
   }
 }
 
@@ -569,7 +566,7 @@ function doubleTapRight(e) {
 }
 
 let fastForwardTimeout;
-let fastBackwardTimeout;
+let rewindTimeout;
 
 function fastForwardingMobile(currentTime) {
   clearTimeout(fastForwardTimeout);
@@ -589,20 +586,20 @@ function fastForwardingMobile(currentTime) {
   }, 1000);
 }
 
-function fastBackwardingMobile(currentTime) {
-  clearTimeout(fastBackwardTimeout);
+function reswindingMobile(currentTime) {
+  clearTimeout(rewindTimeout);
   doubletap.doubleTapping = true;
   skip(-5);
-  fastBackward.classList.add("visible");
+  rewind.classList.add("visible");
   doubletap.lastTapTime = currentTime;
-  doubletap.fastBackwardTimer = doubletap.fastBackwardTimer += 5;
-  fastBackwardTimer.innerText = `${doubletap.fastBackwardTimer}`;
-  fastBackwardTimeout = setTimeout(async () => {
+  doubletap.rewindTimer = doubletap.rewindTimer += 5;
+  rewindTimer.innerText = `${doubletap.rewindTimer}`;
+  rewindTimeout = setTimeout(async () => {
     if (new Date().getTime() - doubletap.lastTapTime > threshold)
-      fastBackward.classList.remove("visible");
+      rewind.classList.remove("visible");
     await delay(threshold);
-    doubletap.fastBackwardTimer = 0;
-    fastBackwardTimer.innerText = `5`;
+    doubletap.rewindTimer = 0;
+    rewindTimer.innerText = `5`;
   }, 1000);
 }
 

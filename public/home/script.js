@@ -3,8 +3,7 @@ import "../common/cursor.js";
 import "../common/phonenav.js";
 import "../common/header.js";
 
-import { loadingAnimation } from "../common/loading.js";
-import { pageTransition } from "../common/page_transition.js";
+import { loading } from "../common/loading.js";
 
 const watchVideo = document.getElementById("watch-video");
 const videoWrapper = document.getElementById("video-wrapper");
@@ -18,31 +17,6 @@ const transitionContainerOut = document.querySelector("#page-transition-out");
 let showVideo;
 
 // user status
-
-const loading_animation_params = () => {
-  const user = localStorage.getItem("user");
-  if (!user) {
-    localStorage.setItem("user", JSON.stringify({ date: new Date() }));
-    loadingAnimation();
-    return;
-  }
-
-  if (user) {
-    const visit_date = new Date(JSON.parse(localStorage.getItem("user")).date);
-    const now = new Date();
-    const time_diff = new Date(now - visit_date);
-    if (time_diff.getMinutes() > 10) {
-      loadingAnimation();
-      localStorage.setItem("user", JSON.stringify({ date: new Date() }));
-      return;
-    } else {
-      pageTransition();
-      return;
-    }
-  }
-};
-
-loading_animation_params();
 
 // reload params
 
