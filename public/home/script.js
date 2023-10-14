@@ -42,8 +42,7 @@ const loading_animation_params = () => {
   }
 };
 
-// loading_animation_params();
-loadingAnimation()
+loading_animation_params();
 
 // reload params
 
