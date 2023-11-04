@@ -3,12 +3,6 @@ import "../common/cursor.js";
 import "../common/phonenav.js";
 import "../common/header.js";
 
-import { loading } from "../common/loading.js";
-
-const watchVideo = document.getElementById("watch-video");
-const videoWrapper = document.getElementById("video-wrapper");
-const video = document.querySelector("video");
-const videoContainer = document.querySelector(".video-container");
 const scrollDown = document.querySelector(".scroll-down");
 const scrollTo = document.querySelector("#scrollTo");
 const navigationLinks = document.querySelectorAll("nav a");
@@ -36,29 +30,6 @@ window.addEventListener("popstate", () => {
   setTimeout(() => {
     location.reload();
   }, [700]);
-});
-
-// video container parameters
-
-watchVideo.addEventListener("click", async () => {
-  showVideo = true;
-  const body = document.querySelector("body");
-  await import("../common/videocontrols.js");
-
-  videoWrapper.classList.remove("hidden");
-  body.classList.add("overflow-hidden");
-  videoContainer.classList.add("allow-keyboard-events");
-});
-
-videoWrapper.addEventListener("click", (e) => {
-  const body = document.querySelector("body");
-  if (e.target.id !== "video-wrapper") {
-    return;
-  }
-  videoWrapper.classList.add("hidden");
-  body.classList.remove("overflow-hidden");
-  videoContainer.classList.remove("allow-keyboard-events");
-  video.pause();
 });
 
 scrollDown.addEventListener("click", () => {
