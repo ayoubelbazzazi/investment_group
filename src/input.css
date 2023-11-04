@@ -175,6 +175,14 @@ header.hide {
   transition: opacity 150ms ease-in-out;
 }
 
+.video-controls-container:hover {
+  opacity:1;
+}
+
+.video-container.mini-player .video-controls-container {
+  display:none;
+}
+
 .video-controls-container.visible,
 .video-container.paused .video-controls-container {
   opacity: 1;
@@ -373,6 +381,10 @@ header.hide {
     height: auto;
   }
 
+  .video-container button.speed-btn {
+    width:40px;
+  }
+
   .video-container.full-screen .video-controls-container button {
     width: 35px;
     height: auto;
@@ -387,6 +399,10 @@ header.hide {
   .video-container .video-controls-container button {
     width: 2vw;
     height: auto;
+  }
+
+  .video-container button.speed-btn {
+    width:3vw;
   }
 
   .video-container.full-screen .video-controls-container button {

@@ -7,7 +7,9 @@ const video = document.querySelector("video"),
   fullScreenBtn = document.querySelectorAll(".full-screen-btn"),
   volumeSlider = document.querySelector(".volume-slider"),
   volumeIndicator = document.querySelector(".volume-indicator"),
+  speedBtn = document.querySelector(".speed-btn"),
   captionsBtn = document.querySelectorAll(".captions-btn"),
+  miniPlayerBtn = document.querySelector(".mini-player-btn"),
   playPauseBtn = document.querySelector(".play-pause-btn"),
   playPauseBtnMobile = document.querySelector(".play-pause-btn-mobile"),
   totalTime = document.querySelectorAll(".total-time"),
@@ -68,7 +70,7 @@ document.addEventListener("keydown", (e) => {
       captionsBtn.forEach((btn) => toggleCaptions(btn));
       break;
     case "arrowleft":
-      reswinding();
+      rewinding();
       break;
     case "arrowright":
       fastForwarding();
@@ -148,7 +150,7 @@ function fastForwarding() {
   }, 1000);
 }
 
-function reswinding() {
+function rewinding() {
   if (video.currentTime < 1) return;
   fastForward.classList.remove("visible");
   fastForwardCounter = 0;
@@ -250,11 +252,10 @@ fullScreenBtn.forEach((btn) => {
 function toggleFullScreen() {
   if (document.fullscreenElement == null) {
     videoContainer.requestFullscreen();
-    videoControls.classList.remove("visible");
   } else {
     document.exitFullscreen();
-    videoControls.classList.remove("visible");
   }
+  videoControls.classList.remove("visible");
 }
 
 document.addEventListener("fullscreenchange", () => {
@@ -271,6 +272,17 @@ videoContainer.addEventListener("mousemove", () => {
   }, [3000]);
 });
 
+// Playback speed
+
+speedBtn.addEventListener("click", changePlaybackSpeed);
+
+function changePlaybackSpeed() {
+  let newPlayBackRate = video.playbackRate + 0.25;
+  if (newPlayBackRate > 1.75) newPlayBackRate = 0.25;
+  video.playbackRate = newPlayBackRate;
+  speedBtn.textContent = `${newPlayBackRate}x`;
+}
+
 // captions controls
 
 const captions = video.textTracks[0];
@@ -286,6 +298,28 @@ function toggleCaptions(btn) {
   videoContainer.classList.toggle("captions", isHidden);
   btn.classList.toggle("captions-active");
 }
+
+// Picture in picture mode
+
+miniPlayerBtn.addEventListener("click", toggleMiniPlayer)
+
+function toggleMiniPlayer () {
+  if(videoContainer.classList.contains("mini-player")) {
+    document.exitPictureInPicture()
+  } else {
+    video.requestPictureInPicture()
+  }
+}
+
+video.addEventListener("enterpictureinpicture", () => {
+  videoContainer.classList.add("mini-player");
+  videoControls.classList.add("hidden")
+});
+
+video.addEventListener("leavepictureinpicture", () => {
+  videoContainer.classList.remove("mini-player");
+  videoControls.classList.remove("hidden")
+});
 
 // duration
 
@@ -376,6 +410,15 @@ function skip(duration) {
 }
 
 // mobile specific controls
+
+playPauseBtnMobile.addEventListener("click", disabledControlsAlert);
+timelineContainerMobile.addEventListener("click", disabledControlsAlert);
+
+function disabledControlsAlert() {
+  if (!isTouchScreen) {
+    alert("Switch to touch screen mode to enable video controls");
+  }
+}
 
 const video_controls = {
   showVideoControls: false,
@@ -538,7 +581,7 @@ function doubleTapLeft(e) {
     return;
   }
   if (doubletap.left) {
-    reswindingMobile(currentTime);
+    rewindingMobile(currentTime);
   }
 }
 
@@ -586,7 +629,7 @@ function fastForwardingMobile(currentTime) {
   }, 1000);
 }
 
-function reswindingMobile(currentTime) {
+function rewindingMobile(currentTime) {
   clearTimeout(rewindTimeout);
   doubletap.doubleTapping = true;
   skip(-5);
@@ -655,3 +698,25 @@ function toggleUpdateMobile(e) {
     video_controls.showVideoControls = false;
   }
 }
+
+// Playback speen mobile 
+// let isSpeedUp = false
+// let speedUpTimeout
+// videoMobileControls.addEventListener("touchstart", toggleSpeedUp)
+// videoMobileControls.addEventListener("touchend", toggleSpeedUp)
+
+// function toggleSpeedUp (e) {
+//   if(video.paused) return
+//   if(video_controls.showVideoControls === true) return
+//   e.preventDefault()
+//   if(!isSpeedUp) {
+//     speedUpTimeout = setTimeout(() => {
+//       video.playbackRate = 2
+//       isSpeedUp = !isSpeedUp
+//     },1000)
+//     return
+//   }
+//   clearTimeout(speedUpTimeout)
+//   video.playbackRate = 1
+//   console.log("yeah")
+// }
