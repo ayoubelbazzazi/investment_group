@@ -172,6 +172,7 @@ header.hide {
 
 .video-container .video-controls-container-mobile button.speed-btn {
   width:30px;
+  user-select: none;
 }
 
 .video-controls-container {
