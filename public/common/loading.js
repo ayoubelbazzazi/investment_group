@@ -103,7 +103,7 @@ export const loading = () => {
     const time_diff = new Date(now - visit_date);
     if (time_diff.getMinutes() > 10) {
       loadingAnimation();
-      localStorage.setItem("user", JSON.stringify({ date: new Date() }));
+      localStorage.setItem("user", JSON.stringify({ date: now }));
       return true;
     } else {
       pageTransition();

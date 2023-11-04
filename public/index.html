@@ -173,7 +173,7 @@
             class="text-[4.8vw] uppercase font-bold flex-col hidden md:flex leading-none mb-12 2xl:mb-[4vw]" id="heading-desktop">
             <span>ambitious goals? complex projects?</span>
             <span>when resutls matter,</span>
-            <span>investmet group delivers</span>
+            <span>investment group delivers</span>
           </h1>
           <div class="flex flex-col md:flex-row md:items-center mb-12 md:gap-8">
             <p
@@ -214,7 +214,7 @@
               class="mt-20 mb-20 mx-6 xl:mx-20 w-full flex items-center justify-center md:w-[80%] lg:w-[50%] aspect-video"
             >
               <div
-            class="video-container paused relative flex justify-center mx-auto bg-black w-full"
+            class="video-container home paused relative flex justify-center mx-auto bg-black w-full"
             data-volume-level="high"
           >
             <div
@@ -342,6 +342,11 @@
                   </svg>
                 </div>
                 <div class="post-controls flex items-center">
+                  <button
+                  class="speed-btn font-semibold text-xs 2lg:text-[1.2vw] flex flex-col items-end justify-end expand-cursor"
+                >
+                  1x
+                </button>
                   <button class="captions-btn relative">
                     <svg viewBox="0 0 24 24" class="transform">
                       <path
@@ -374,7 +379,7 @@
               </div>
             </div>
             <div
-              class="video-controls-container opacity-0 bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0 right-0 text-white z-[99] hidden lg:flex items-center justify-between px-[5px] py-[30px] 2xl:py-[2vw] gap-[.5rem] h-[30px]"
+              class="video-controls-container opacity-0 bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0 right-0 text-white z-[99] hidden lg:flex items-center justify-between px-[10px] py-[30px] 2xl:py-[2vw] 2xl:px-[1vw] gap-[.5rem] h-[30px]"
             >
               <div class="pre-controls flex items-center gap-[.5rem] h-full">
                 <button
@@ -505,7 +510,12 @@
                   />
                 </svg>
               </div>
-              <div class="post-controls flex items-center cursor-pointer">
+              <div class="post-controls flex items-center cursor-pointer gap-1">
+                <button
+                  class="speed-btn font-semibold text-xs flex flex-col items-end justify-end mr-1 2lg:text-[1vw]"
+                >
+                  1x
+                </button>
                 <button class="captions-btn expand-cursor cursor-pointer flex items-center justify-center">
                   <svg
                     viewBox="0 0 24 24"
@@ -515,6 +525,17 @@
                       class="expand-cursor cursor-pointer"
                       fill="currentColor"
                       d="M18,11H16.5V10.5H14.5V13.5H16.5V13H18V14A1,1 0 0,1 17,15H14A1,1 0 0,1 13,14V10A1,1 0 0,1 14,9H17A1,1 0 0,1 18,10M11,11H9.5V10.5H7.5V13.5H9.5V13H11V14A1,1 0 0,1 10,15H7A1,1 0 0,1 6,14V10A1,1 0 0,1 7,9H10A1,1 0 0,1 11,10M19,4H5C3.89,4 3,4.89 3,6V18A2,2 0 0,0 5,20H19A2,2 0 0,0 21,18V6C21,4.89 20.1,4 19,4Z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="mini-player-btn expand-cursor cursor-pointer flex items-center justify-center transform scale-90"
+                >
+                  <svg viewBox="0 0 24 24" class="w-full h-auto expand-cursor">
+                    <path
+                      class="expand-cursor"
+                      fill="currentColor"
+                      d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zm-10-7h9v6h-9z"
                     />
                   </svg>
                 </button>
@@ -1260,7 +1281,7 @@
             </div>
           </div>
         </div>
-        <div class="m-6 lg:mx-14 xl:mx-20 md:grid grid-cols-custom">
+        <div class="m-6 lg:mx-14 xl:mx-20 md:grid grid-cols-custom mb-20 lg:mb-0">
           <div class="hidden md:flex items-center justify-center">
             <p class="text-[9vw] text-center">10<br />YRS</p>
           </div>
@@ -1276,10 +1297,21 @@
             </button>
           </div>
         </div>
+        <div class="m-6 mb-32 relative">
+          <div
+            id="back-to-top"
+            class="absolute flex items-center justify-between gap-[2vw] right-[5vw] top-1/2 transform -translate-y-1/2 h-[10vw] bg-background px-[2vw] expand-cursor cursor-pointer"
+          >
+            <div class="text-lg lg:text-[1vw] font-semibold expand-cursor">Back to top</div>
+            <div
+              class="w-10 h-10 lg:w-[5vw] lg:h-[5vw] bg-none border-solid border-primary border-[1px] rounded-full flex justify-center items-center expand-cursor hover:text-black hover:bg-white"
+            >
+              <i class="fa-solid fa-arrow-up-long text-base lg:text-[1.5vw] expand-cursor"></i>
+            </div>
+          </div>
+          <div class="w-full h-[1px] bg-primary"></div>
+        </div>
       </main>
-      <div class="mb-20 mt-20">
-        <div class="w-full h-[1px] bg-primary invert-color-2"></div>
-      </div>
       <footer
         class="flex flex-col text-[5vw] m-6 lg:mx-14 xl:mx-20 md:flex-row md:text-[1.2vw] lg:text-[1.1vw] justify-between"
       >

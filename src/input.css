@@ -170,6 +170,10 @@ header.hide {
   width: 25px;
 }
 
+.video-container .video-controls-container-mobile button.speed-btn {
+  width:30px;
+}
+
 .video-controls-container {
   opacity: 0;
   transition: opacity 150ms ease-in-out;
@@ -385,6 +389,10 @@ header.hide {
     width:40px;
   }
 
+  .video-container.home button.speed-btn {
+    width:30px;
+  }
+
   .video-container.full-screen .video-controls-container button {
     width: 35px;
     height: auto;
@@ -403,6 +411,10 @@ header.hide {
 
   .video-container button.speed-btn {
     width:3vw;
+  }
+
+  .video-container.home button.speed-btn {
+    width:2.5vw;
   }
 
   .video-container.full-screen .video-controls-container button {

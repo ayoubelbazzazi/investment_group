@@ -7,7 +7,7 @@ const video = document.querySelector("video"),
   fullScreenBtn = document.querySelectorAll(".full-screen-btn"),
   volumeSlider = document.querySelector(".volume-slider"),
   volumeIndicator = document.querySelector(".volume-indicator"),
-  speedBtn = document.querySelector(".speed-btn"),
+  speedBtn = document.querySelectorAll(".speed-btn"),
   captionsBtn = document.querySelectorAll(".captions-btn"),
   miniPlayerBtn = document.querySelector(".mini-player-btn"),
   playPauseBtn = document.querySelector(".play-pause-btn"),
@@ -274,13 +274,17 @@ videoContainer.addEventListener("mousemove", () => {
 
 // Playback speed
 
-speedBtn.addEventListener("click", changePlaybackSpeed);
+speedBtn.forEach((btn) => {
+  btn.addEventListener("click", changePlaybackSpeed);
+});
 
 function changePlaybackSpeed() {
   let newPlayBackRate = video.playbackRate + 0.25;
   if (newPlayBackRate > 1.75) newPlayBackRate = 0.25;
   video.playbackRate = newPlayBackRate;
-  speedBtn.textContent = `${newPlayBackRate}x`;
+  speedBtn.forEach((btn) => {
+    btn.textContent = `${newPlayBackRate}x`;
+  });
 }
 
 // captions controls
@@ -301,24 +305,24 @@ function toggleCaptions(btn) {
 
 // Picture in picture mode
 
-miniPlayerBtn.addEventListener("click", toggleMiniPlayer)
+miniPlayerBtn.addEventListener("click", toggleMiniPlayer);
 
-function toggleMiniPlayer () {
-  if(videoContainer.classList.contains("mini-player")) {
-    document.exitPictureInPicture()
+function toggleMiniPlayer() {
+  if (videoContainer.classList.contains("mini-player")) {
+    document.exitPictureInPicture();
   } else {
-    video.requestPictureInPicture()
+    video.requestPictureInPicture();
   }
 }
 
 video.addEventListener("enterpictureinpicture", () => {
   videoContainer.classList.add("mini-player");
-  videoControls.classList.add("hidden")
+  videoControls.classList.add("hidden");
 });
 
 video.addEventListener("leavepictureinpicture", () => {
   videoContainer.classList.remove("mini-player");
-  videoControls.classList.remove("hidden")
+  videoControls.classList.remove("hidden");
 });
 
 // duration
@@ -534,6 +538,9 @@ videoContainer.addEventListener("touchstart", (e) => {
     "timeline-mobile",
     "track-indicator-mobile",
     "thumb-indicator-mobile",
+    "speed-btn",
+    "captions-btn",
+    "full-screen-btn",
   ];
   if (classListReturn.some((item) => targetClassList.includes(item))) {
     showControlsAnimation.pause();
@@ -698,25 +705,3 @@ function toggleUpdateMobile(e) {
     video_controls.showVideoControls = false;
   }
 }
-
-// Playback speen mobile 
-// let isSpeedUp = false
-// let speedUpTimeout
-// videoMobileControls.addEventListener("touchstart", toggleSpeedUp)
-// videoMobileControls.addEventListener("touchend", toggleSpeedUp)
-
-// function toggleSpeedUp (e) {
-//   if(video.paused) return
-//   if(video_controls.showVideoControls === true) return
-//   e.preventDefault()
-//   if(!isSpeedUp) {
-//     speedUpTimeout = setTimeout(() => {
-//       video.playbackRate = 2
-//       isSpeedUp = !isSpeedUp
-//     },1000)
-//     return
-//   }
-//   clearTimeout(speedUpTimeout)
-//   video.playbackRate = 1
-//   console.log("yeah")
-// }

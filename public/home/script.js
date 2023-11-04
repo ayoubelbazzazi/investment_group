@@ -13,6 +13,8 @@ const scrollDown = document.querySelector(".scroll-down");
 const scrollTo = document.querySelector("#scrollTo");
 const navigationLinks = document.querySelectorAll("nav a");
 const transitionContainerOut = document.querySelector("#page-transition-out");
+const backToTop = document.getElementById("back-to-top")
+
 
 let showVideo;
 
@@ -82,4 +84,10 @@ barba.init({
       },
     },
   ],
+});
+
+// Back to the top
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 });
