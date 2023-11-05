@@ -693,10 +693,6 @@ body {
   z-index: 20;
 }
 
-.z-30 {
-  z-index: 30;
-}
-
 .z-50 {
   z-index: 50;
 }
@@ -1288,10 +1284,6 @@ body {
   gap: 0.75rem;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
 .gap-5 {
   gap: 1.25rem;
 }
@@ -1389,10 +1381,6 @@ body {
   border-style: solid;
 }
 
-.border-\[rgba\(\#fff\2c \.2\)\] {
-  border-color: rgba(#fff,.2);
-}
-
 .border-background {
   --tw-border-opacity: 1;
   border-color: rgb(16 16 16 / var(--tw-border-opacity));
@@ -1473,10 +1461,6 @@ body {
 .bg-yellow-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
-}
-
-.bg-opacity-50 {
-  --tw-bg-opacity: 0.5;
 }
 
 .bg-gradient-to-r {
@@ -1605,11 +1589,6 @@ body {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
-}
-
-.px-\[10px\] {
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .px-\[10vh\] {
@@ -2654,10 +2633,6 @@ header.hide {
     display: none;
   }
 
-  .md\:h-\[1\.8vw\] {
-    height: 1.8vw;
-  }
-
   .md\:h-\[4px\] {
     height: 4px;
   }
@@ -2666,20 +2641,12 @@ header.hide {
     height: 8vw;
   }
 
-  .md\:w-\[1\.8vw\] {
-    width: 1.8vw;
-  }
-
   .md\:w-\[30\%\] {
     width: 30%;
   }
 
   .md\:w-\[40vw\] {
     width: 40vw;
-  }
-
-  .md\:w-\[80\%\] {
-    width: 80%;
   }
 
   .md\:w-\[9vw\] {
@@ -2889,10 +2856,6 @@ header.hide {
     width: 20%;
   }
 
-  .lg\:w-\[50\%\] {
-    width: 50%;
-  }
-
   .lg\:w-\[5vw\] {
     width: 5vw;
   }
@@ -2957,10 +2920,6 @@ header.hide {
 @media (min-width: 1200px) {
   .\32lg\:text-\[1\.2vw\] {
     font-size: 1.2vw;
-  }
-
-  .\32lg\:text-\[1vw\] {
-    font-size: 1vw;
   }
 }
 
@@ -3036,19 +2995,9 @@ header.hide {
     border-bottom-width: .1vw;
   }
 
-  .\32xl\:px-\[1\.5vw\] {
-    padding-left: 1.5vw;
-    padding-right: 1.5vw;
-  }
-
   .\32xl\:px-\[1\.7vw\] {
     padding-left: 1.7vw;
     padding-right: 1.7vw;
-  }
-
-  .\32xl\:px-\[1vw\] {
-    padding-left: 1vw;
-    padding-right: 1vw;
   }
 
   .\32xl\:px-\[2vw\] {
@@ -3074,11 +3023,6 @@ header.hide {
   .\32xl\:py-\[\.8vw\] {
     padding-top: .8vw;
     padding-bottom: .8vw;
-  }
-
-  .\32xl\:py-\[1\.2vw\] {
-    padding-top: 1.2vw;
-    padding-bottom: 1.2vw;
   }
 
   .\32xl\:py-\[2vw\] {
