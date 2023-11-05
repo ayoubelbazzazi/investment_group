@@ -10,8 +10,6 @@ const transitionContainerOut = document.querySelector("#page-transition-out");
 const backToTop = document.getElementById("back-to-top")
 
 
-let showVideo;
-
 // user status
 
 // reload params
